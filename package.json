@@ -1,0 +1,32 @@
+{
+  "name": "nexabuy",
+  "version": "1.0.0",
+  "description": "NexaBuy - Premium E-Commerce Platform built with MERN Stack",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install",
+    "build:client": "cd client && npm run build",
+    "start:server": "cd server && npm start",
+    "test:server": "cd server && npm test",
+    "test:client": "cd client && npm test",
+    "seed": "cd server && npm run seed"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "keywords": [
+    "ecommerce",
+    "mern",
+    "react",
+    "nodejs",
+    "mongodb"
+  ],
+  "author": "NexaBuy",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.18.1"
+  }
+}

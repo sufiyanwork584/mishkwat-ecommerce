@@ -1,0 +1,553 @@
+{
+  "success": true,
+  "data": {
+    "products": [
+      {
+        "_id": "6a40fbd0c340736258dde175",
+        "title": "Mishkwatul Hajj Tasbih (Hindi Script) Set of 10 Tasbih",
+        "description": "Mishkwatul Hajj Tasbih – Hindi Script Edition. Set of 10 compact Dua Tasbih sets — ideal for bulk gifting or group Hajj travel arrangements.\n\nProduct Details:\n- Language: Arabic with Hindi Translation\n- Number of Dua Cards: 18 Cards per tasbih\n- Material: 300 GSM Premium Art Card with Matt Lamination\n- Binding: Stainless Steel Ring with Tawaf Tasbih (7 Beads)\n- Format: Keychain-style, compact and pocket-friendly\n- Pack Quantity: 10 pieces\n\nCovers 30 authentic Duas for the entire pilgrimage. Best suited for Hajj/Umrah travel groups, tour operators, and masjids.",
+        "category": {
+          "_id": "6a40fbbe136a2f790c55d0c4",
+          "name": "Hajj & Umrah Series",
+          "slug": "hajj-umrah-series"
+        },
+        "brand": "Mishkwat Publications",
+        "images": [
+          {
+            "url": "https://mishkwat.com/wp-content/uploads/2025/04/TH1.jpg",
+            "publicId": "TH1_10",
+            "_id": "6a40fbd0c340736258dde176"
+          }
+        ],
+        "price": 600,
+        "salePrice": 399,
+        "stock": 300,
+        "totalRatings": 0,
+        "avgRating": 0,
+        "numReviews": 0,
+        "tags": [],
+        "isFeatured": false,
+        "isActive": true,
+        "arabicName": "",
+        "isHajjKit": false,
+        "isHalal": false,
+        "weight": 0,
+        "dimensions": {
+          "length": 0,
+          "width": 0,
+          "height": 0
+        },
+        "specifications": [],
+        "createdAt": "2026-06-28T10:47:44.487Z",
+        "updatedAt": "2026-07-05T10:13:57.033Z",
+        "slug": "mishkwatul-hajj-tasbih-hindi-script-set-of-10-tasbih-mqxo0ep3",
+        "__v": 0,
+        "subcategory": "6a40fbbe136a2f790c55d0c7"
+      },
+      {
+        "_id": "6a40fbd0c340736258dde172",
+        "title": "Mishkwatul Hajj Tasbih (Urdu Script) Set of 10 Tasbih",
+        "description": "Mishkwatul Hajj Tasbih – Urdu Script Edition. Set of 10 compact Dua Tasbih sets — ideal for bulk gifting or group Hajj travel arrangements.\n\nProduct Details:\n- Language: Arabic with Urdu Translation\n- Number of Dua Cards: 18 Cards per tasbih\n- Material: 300 GSM Premium Art Card with Matt Lamination\n- Binding: Stainless Steel Ring with Tawaf Tasbih (7 Beads)\n- Format: Keychain-style, compact and pocket-friendly\n- Pack Quantity: 10 pieces\n\nCovers 30 authentic Duas for the entire pilgrimage. Best suited for Hajj/Umrah travel groups, tour operators, and masjids.",
+        "category": {
+          "_id": "6a40fbbe136a2f790c55d0c4",
+          "name": "Hajj & Umrah Series",
+          "slug": "hajj-umrah-series"
+        },
+        "brand": "Mishkwat Publications",
+        "images": [
+          {
+            "url": "https://mishkwat.com/wp-content/uploads/2025/04/TU1.jpg",
+            "publicId": "TU1_10",
+            "_id": "6a40fbd0c340736258dde173"
+          }
+        ],
+        "price": 600,
+        "salePrice": 399,
+        "stock": 299,
+        "totalRatings": 0,
+        "avgRating": 0,
+        "numReviews": 0,
+        "tags": [],
+        "isFeatured": false,
+        "isActive": true,
+        "arabicName": "",
+        "isHajjKit": false,
+        "isHalal": false,
+        "weight": 0,
+        "dimensions": {
+          "length": 0,
+          "width": 0,
+          "height": 0
+        },
+        "specifications": [],
+        "createdAt": "2026-06-28T10:47:44.478Z",
+        "updatedAt": "2026-07-05T10:13:57.024Z",
+        "slug": "mishkwatul-hajj-tasbih-urdu-script-set-of-10-tasbih-mqxo0eou",
+        "__v": 0,
+        "subcategory": "6a40fbbe136a2f790c55d0c7"
+      },
+      {
+        "_id": "6a40fbd0c340736258dde16b",
+        "title": "Mishkwat Hajj Umrah Tasbih Hindi 6 Quantity",
+        "description": "Mishkwat Hajj & Umrah Tasbih – Hindi Edition. Pack of 6 compact keychain-style Dua Tasbih sets. Includes 30 authentic Duas and a 7-bead Tawaf counter — ideal for gifting pilgrims.\n\nProduct Details:\n- Language: Arabic with Hindi Translation\n- Number of Dua Cards: 18 Cards\n- Material: 300 GSM Premium Art Card with Matt Lamination\n- Binding: Stainless Steel Ring with Tawaf Tasbih (7 Beads)\n- Format: Keychain-style, compact and pocket-friendly\n- Pack Quantity: 6 pieces\n\nCovers 30 Duas from starting Safar to Salaam in Madinah. Tawaf Tasbih with 7 beads makes counting rounds easy. Ideal gift for every Haji.",
+        "category": {
+          "_id": "6a40fbbe136a2f790c55d0c4",
+          "name": "Hajj & Umrah Series",
+          "slug": "hajj-umrah-series"
+        },
+        "brand": "Mishkwat Publications",
+        "images": [
+          {
+            "url": "https://mishkwat.com/wp-content/uploads/2025/04/TH1.jpg",
+            "publicId": "TH1",
+            "_id": "6a40fbd0c340736258dde16c"
+          },
+          {
+            "url": "https://mishkwat.com/wp-content/uploads/2025/04/TH5.jpg",
+            "publicId": "TH5",
+            "_id": "6a40fbd0c340736258dde16d"
+          },
+          {
+            "url": "https://mishkwat.com/wp-content/uploads/2025/04/TH3.jpg",
+            "publicId": "TH3",
+            "_id": "6a40fbd0c340736258dde16e"
+          },
+          {
+            "url": "https://mishkwat.com/wp-content/uploads/2025/04/TH2.jpg",
+            "publicId": "TH2",
+            "_id": "6a40fbd0c340736258dde16f"
+          }
+        ],
+        "price": 360,
+        "salePrice": 299,
+        "stock": 500,
+        "totalRatings": 0,
+        "avgRating": 0,
+        "numReviews": 0,
+        "tags": [],
+        "isFeatured": false,
+        "isActive": true,
+        "arabicName": "",
+        "isHajjKit": false,
+        "isHalal": false,
+        "weight": 0,
+        "dimensions": {
+          "length": 0,
+          "width": 0,
+          "height": 0
+        },
+        "specifications": [],
+        "createdAt": "2026-06-28T10:47:44.469Z",
+        "updatedAt": "2026-07-05T10:13:57.009Z",
+        "slug": "mishkwat-hajj-umrah-tasbih-hindi-6-quantity-mqxo0eom",
+        "__v": 0,
+        "subcategory": "6a40fbbe136a2f790c55d0c7"
+      },
+      {
+        "_id": "6a40fbd0c340736258dde168",
+        "title": "Mishkwat Hajj Umrah Tasbih Urdu 6 Quantity",
+        "description": "Mishkwat Hajj & Umrah Tasbih – Urdu Edition. Pack of 6 compact keychain-style Dua Tasbih sets. Includes 30 authentic Duas and a 7-bead Tawaf counter — perfect for gifting pilgrims.\n\nProduct Details:\n- Language: Arabic with Urdu Translation\n- Number of Dua Cards: 18 Cards\n- Material: 300 GSM Premium Art Card with Matt Lamination\n- Binding: Stainless Steel Ring with Tawaf Tasbih (7 Beads)\n- Format: Keychain-style, compact and pocket-friendly\n- Pack Quantity: 6 pieces\n\nCovers 30 Duas from starting Safar to Salaam in Madinah. Tawaf Tasbih with 7 beads makes counting rounds easy. Ideal gift for every Haji.",
+        "category": {
+          "_id": "6a40fbbe136a2f790c55d0c4",
+          "name": "Hajj & Umrah Series",
+          "slug": "hajj-umrah-series"
+        },
+        "brand": "Mishkwat Publications",
+        "images": [
+          {
+            "url": "https://mishkwat.com/wp-content/uploads/2025/04/TU1.jpg",
+            "publicId": "TU1",
+            "_id": "6a40fbd0c340736258dde169"
+          }
+        ],
+        "price": 360,
+        "salePrice": 299,
+        "stock": 500,
+        "totalRatings": 0,
+        "avgRating": 0,
+        "numReviews": 0,
+        "tags": [],
+        "isFeatured": false,
+        "isActive": true,
+        "arabicName": "",
+        "isHajjKit": false,
+        "isHalal": false,
+        "weight": 0,
+        "dimensions": {
+          "length": 0,
+          "width": 0,
+          "height": 0
+        },
+        "specifications": [],
+        "createdAt": "2026-06-28T10:47:44.461Z",
+        "updatedAt": "2026-07-05T10:13:56.995Z",
+        "slug": "mishkwat-hajj-umrah-tasbih-urdu-6-quantity-mqxo0eod",
+        "__v": 0,
+        "subcategory": "6a40fbbe136a2f790c55d0c7"
+      },
+      {
+        "_id": "6a40fbd0c340736258dde161",
+        "title": "Mishkwatul Umrah Hindi",
+        "description": "Umrah guide Dua cards in Arabic with Hindi translation. Features a comprehensive Umrah checklist and 35 essential Prayers for the Umrah Journey, designed to guide the traveller step by step throughout their sacred journey.\n\nProduct Details:\n- Language: Arabic + Hindi Translation\n- Total Flash Cards: 19\n- Material: Premium 300 GSM Gloss Laminated Art Card\n- Size: 85mm x 135mm\n- Binding: Stainless Steel Ring\n- Includes: Tawaf Tasbih (7-lap Counter) + Lanyard\n- Travel-Friendly, Durable, Water-Resistant\n\nCovers 35 Duas: Dua for Safar, Umrah Checklist, Intention for Ehram, Talbiyah, Entering Masjid al-Haram, First Sight of Kaaba, Duas during Tawaf, At Rukn-e-Yamani, Zamzam Water, Sa'i at Safa & Marwah, Halq/Qasr, Meezab al-Rahmah, Multazim, Tawaf-e-Wida, Entering Madinah, Salaam at Roza-e-Rasool ﷺ, Jannat-ul-Baqi, and returning home.",
+        "category": {
+          "_id": "6a40fbbe136a2f790c55d0c4",
+          "name": "Hajj & Umrah Series",
+          "slug": "hajj-umrah-series"
+        },
+        "brand": "Mishkwat Publications",
+        "images": [
+          {
+            "url": "https://mishkwat.com/wp-content/uploads/2025/07/UH1-4.png",
+            "publicId": "UH1",
+            "_id": "6a40fbd0c340736258dde162"
+          },
+          {
+            "url": "https://mishkwat.com/wp-content/uploads/2025/07/UH2-4.png",
+            "publicId": "UH2",
+            "_id": "6a40fbd0c340736258dde163"
+          },
+          {
+            "url": "https://mishkwat.com/wp-content/uploads/2025/07/UH3-3.png",
+            "publicId": "UH3",
+            "_id": "6a40fbd0c340736258dde164"
+          },
+          {
+            "url": "https://mishkwat.com/wp-content/uploads/2025/07/UH4-3.png",
+            "publicId": "UH4",
+            "_id": "6a40fbd0c340736258dde165"
+          },
+          {
+            "url": "https://mishkwat.com/wp-content/uploads/2025/07/UH5-3.png",
+            "publicId": "UH5",
+            "_id": "6a40fbd0c340736258dde166"
+          }
+        ],
+        "price": 700,
+        "salePrice": 370,
+        "stock": 499,
+        "totalRatings": 0,
+        "avgRating": 0,
+        "numReviews": 0,
+        "tags": [],
+        "isFeatured": true,
+        "isActive": true,
+        "arabicName": "",
+        "isHajjKit": false,
+        "isHalal": false,
+        "weight": 0,
+        "dimensions": {
+          "length": 0,
+          "width": 0,
+          "height": 0
+        },
+        "specifications": [],
+        "createdAt": "2026-06-28T10:47:44.453Z",
+        "updatedAt": "2026-07-05T10:13:56.971Z",
+        "slug": "mishkwatul-umrah-hindi-mqxo0eo5",
+        "__v": 0,
+        "subcategory": "6a40fbbe136a2f790c55d0c6"
+      },
+      {
+        "_id": "6a40fbd0c340736258dde15a",
+        "title": "Mishkwatul Umrah (Roman Urdu Script)",
+        "description": "Portable Umrah Guide Card in Arabic with Roman Urdu translation. Features a complete Umrah checklist along with 35 essential Duas for Umrah — structured to help pilgrims perform each step of their journey with ease.\n\nProduct Details:\n- Language: Arabic + Roman Urdu Translation\n- Total Flash Cards: 19\n- Material: Premium 300 GSM Gloss Laminated Art Card\n- Size: 85mm x 135mm\n- Binding: Stainless Steel Ring\n- Includes: Tawaf Tasbih (7-lap Counter) + Lanyard\n- Travel-Friendly, Compact, Durable, Water-Resistant\n\nCovers 35 Duas: Dua for Safar, Umrah Checklist, Intention for Ehram, Talbiyah, Entering Masjid al-Haram, First Sight of Kaaba, Duas during Tawaf, At Rukn-e-Yamani, Zamzam Water, Sa'i at Safa & Marwah, Halq/Qasr, Meezab al-Rahmah, Multazim, Tawaf-e-Wida, Entering Madinah, Salaam at Roza-e-Rasool ﷺ, Jannat-ul-Baqi, and returning home.",
+        "category": {
+          "_id": "6a40fbbe136a2f790c55d0c4",
+          "name": "Hajj & Umrah Series",
+          "slug": "hajj-umrah-series"
+        },
+        "brand": "Mishkwat Publications",
+        "images": [
+          {
+            "url": "https://mishkwat.com/wp-content/uploads/2025/04/UE1.jpg",
+            "publicId": "UE1",
+            "_id": "6a40fbd0c340736258dde15b"
+          },
+          {
+            "url": "https://mishkwat.com/wp-content/uploads/2025/04/UE2.jpg",
+            "publicId": "UE2",
+            "_id": "6a40fbd0c340736258dde15c"
+          },
+          {
+            "url": "https://mishkwat.com/wp-content/uploads/2025/04/UE3.jpg",
+            "publicId": "UE3",
+            "_id": "6a40fbd0c340736258dde15d"
+          },
+          {
+            "url": "https://mishkwat.com/wp-content/uploads/2025/04/UE4.jpg",
+            "publicId": "UE4",
+            "_id": "6a40fbd0c340736258dde15e"
+          },
+          {
+            "url": "https://mishkwat.com/wp-content/uploads/2025/04/UE5.jpg",
+            "publicId": "UE5",
+            "_id": "6a40fbd0c340736258dde15f"
+          }
+        ],
+        "price": 700,
+        "salePrice": 390,
+        "stock": 497,
+        "totalRatings": 0,
+        "avgRating": 0,
+        "numReviews": 0,
+        "tags": [],
+        "isFeatured": true,
+        "isActive": true,
+        "arabicName": "",
+        "isHajjKit": false,
+        "isHalal": false,
+        "weight": 0,
+        "dimensions": {
+          "length": 0,
+          "width": 0,
+          "height": 0
+        },
+        "specifications": [],
+        "createdAt": "2026-06-28T10:47:44.443Z",
+        "updatedAt": "2026-07-05T10:13:56.957Z",
+        "slug": "mishkwatul-umrah-roman-urdu-script-mqxo0env",
+        "__v": 0,
+        "subcategory": "6a40fbbe136a2f790c55d0c6"
+      },
+      {
+        "_id": "6a40fbd0c340736258dde153",
+        "title": "Mishkwatul Umrah (Urdu Script)",
+        "description": "Compact Umrah Dua Card in Arabic with Urdu translation. Includes a complete Umrah checklist and 35 essential Duas organized to help pilgrims follow every step of their journey with ease.\n\nProduct Details:\n- Language: Arabic with Urdu Translation\n- Total Flash Cards: 19\n- Material: Premium 300 GSM Gloss Laminated Art Card\n- Size: 69mm x 86mm\n- Accessories: Stainless Steel Ring Binding, Tawaf Tasbih (7-bead counter), Neck Lanyard\n- Travel-Friendly, Durable, Water-Resistant\n\nCovers 35 Duas: Dua for Safar, Umrah Checklist, Intention for Ehram, Talbiyah, Entering Masjid al-Haram, First Sight of Kaaba, Duas during Tawaf, At Rukn-e-Yamani, Zamzam Water, Sa'i at Safa & Marwah, Halq/Qasr, Meezab al-Rahmah, Multazim, Tawaf-e-Wida, Entering Madinah, Salaam at Roza-e-Rasool ﷺ, Jannat-ul-Baqi, and returning home.",
+        "category": {
+          "_id": "6a40fbbe136a2f790c55d0c4",
+          "name": "Hajj & Umrah Series",
+          "slug": "hajj-umrah-series"
+        },
+        "brand": "Mishkwat Publications",
+        "images": [
+          {
+            "url": "https://mishkwat.com/wp-content/uploads/2025/04/UU1.jpg",
+            "publicId": "UU1",
+            "_id": "6a40fbd0c340736258dde154"
+          },
+          {
+            "url": "https://mishkwat.com/wp-content/uploads/2025/04/UU4.jpg",
+            "publicId": "UU4",
+            "_id": "6a40fbd0c340736258dde155"
+          },
+          {
+            "url": "https://mishkwat.com/wp-content/uploads/2025/04/UU2.jpg",
+            "publicId": "UU2",
+            "_id": "6a40fbd0c340736258dde156"
+          },
+          {
+            "url": "https://mishkwat.com/wp-content/uploads/2025/04/UU5.jpg",
+            "publicId": "UU5",
+            "_id": "6a40fbd0c340736258dde157"
+          }
+        ],
+        "price": 550,
+        "salePrice": 319,
+        "stock": 500,
+        "totalRatings": 0,
+        "avgRating": 0,
+        "numReviews": 0,
+        "tags": [],
+        "isFeatured": true,
+        "isActive": true,
+        "arabicName": "",
+        "isHajjKit": false,
+        "isHalal": false,
+        "weight": 0,
+        "dimensions": {
+          "length": 0,
+          "width": 0,
+          "height": 0
+        },
+        "specifications": [],
+        "createdAt": "2026-06-28T10:47:44.434Z",
+        "updatedAt": "2026-07-05T10:13:56.943Z",
+        "slug": "mishkwatul-umrah-urdu-script-mqxo0enm",
+        "__v": 0,
+        "subcategory": "6a40fbbe136a2f790c55d0c6"
+      },
+      {
+        "_id": "6a40fbd0c340736258dde14c",
+        "title": "Mishkwat Hajj wal Umrah (Hindi Script)",
+        "description": "Compact Hajj & Umrah guide card in Arabic with Hindi translation. Includes a step-by-step checklist for Umrah rituals, essential notes for Hajj preparation, a structured 5-day travel routine, and key reminders to keep travelers organized and confident throughout their journey.\n\nProduct Details:\n- Language: Arabic with Hindi Translation\n- Total Cards: 19 Flash Cards\n- Paper Quality: Premium 300 GSM Art Card with Gloss Lamination\n- Size: 85mm x 135mm\n- Accessories: Stainless Steel Ring Binding, Tawaf Tasbih (7-bead counter), Neck Lanyard\n\nCovers: Dua for Safar, Umrah Checklist, Intention for Ihram, Talbiyah, Entering Masjid al-Haram, Duas during Tawaf, At Rukn-e-Yamani, Zamzam Water, Sa'i, 5-Day Hajj Planner (8th–12th Dhul Hijjah), Duas at Mina, Arafat, Muzdalifah, Rami of Jamaraat, Tawaf-e-Wida, Ziyarat of Madinah, Salaam at Roza-e-Rasool ﷺ.",
+        "category": {
+          "_id": "6a40fbbe136a2f790c55d0c4",
+          "name": "Hajj & Umrah Series",
+          "slug": "hajj-umrah-series"
+        },
+        "brand": "Mishkwat Publications",
+        "images": [
+          {
+            "url": "https://mishkwat.com/wp-content/uploads/2025/04/HH1-1.jpg",
+            "publicId": "HH1",
+            "_id": "6a40fbd0c340736258dde14d"
+          },
+          {
+            "url": "https://mishkwat.com/wp-content/uploads/2025/04/HH2.jpg",
+            "publicId": "HH2",
+            "_id": "6a40fbd0c340736258dde14e"
+          },
+          {
+            "url": "https://mishkwat.com/wp-content/uploads/2025/04/HH3.jpg",
+            "publicId": "HH3",
+            "_id": "6a40fbd0c340736258dde14f"
+          },
+          {
+            "url": "https://mishkwat.com/wp-content/uploads/2025/04/HH4.jpg",
+            "publicId": "HH4",
+            "_id": "6a40fbd0c340736258dde150"
+          },
+          {
+            "url": "https://mishkwat.com/wp-content/uploads/2025/04/HH5.jpg",
+            "publicId": "HH5",
+            "_id": "6a40fbd0c340736258dde151"
+          }
+        ],
+        "price": 700,
+        "salePrice": 370,
+        "stock": 500,
+        "totalRatings": 0,
+        "avgRating": 0,
+        "numReviews": 0,
+        "tags": [],
+        "isFeatured": true,
+        "isActive": true,
+        "arabicName": "",
+        "isHajjKit": false,
+        "isHalal": false,
+        "weight": 0,
+        "dimensions": {
+          "length": 0,
+          "width": 0,
+          "height": 0
+        },
+        "specifications": [],
+        "createdAt": "2026-06-28T10:47:44.425Z",
+        "updatedAt": "2026-07-05T10:13:56.925Z",
+        "slug": "mishkwat-hajj-wal-umrah-hindi-script-mqxo0end",
+        "__v": 0,
+        "subcategory": "6a40fbbe136a2f790c55d0c5"
+      },
+      {
+        "_id": "6a40fbd0c340736258dde145",
+        "title": "Mishkwat Hajj wal Umrah (Roman Urdu Script)",
+        "description": "Hajj & Umrah prayers in Arabic with Roman Urdu translation. Features a comprehensive Umrah checklist, detailed 5-day Hajj routine, and 33 essential Duas designed to guide the pilgrim step by step through their sacred journey.\n\nProduct Details:\n- Language: Arabic with Roman Urdu Translation\n- Total Cards: 19 Flash Cards\n- Paper Quality: Premium 300 GSM Art Card with Gloss Lamination\n- Size: 69mm x 85mm\n- Accessories: Stainless Steel Ring Binding, Tawaf Tasbih (7-bead counter), Neck Lanyard\n\nCovers: Dua for Safar, Umrah Checklist, Intention for Ihram, Talbiyah, Entering Masjid al-Haram, Duas during Tawaf, At Rukn-e-Yamani, Zamzam Water, Sa'i, 5-Day Hajj Planner (8th–12th Dhul Hijjah), Duas at Mina, Arafat, Muzdalifah, Rami of Jamaraat, Tawaf-e-Wida, Ziyarat of Madinah, Salaam at Roza-e-Rasool ﷺ.",
+        "category": {
+          "_id": "6a40fbbe136a2f790c55d0c4",
+          "name": "Hajj & Umrah Series",
+          "slug": "hajj-umrah-series"
+        },
+        "brand": "Mishkwat Publications",
+        "images": [
+          {
+            "url": "https://mishkwat.com/wp-content/uploads/2025/04/HE1.jpg",
+            "publicId": "HE1",
+            "_id": "6a40fbd0c340736258dde146"
+          },
+          {
+            "url": "https://mishkwat.com/wp-content/uploads/2025/04/HE2-1.jpg",
+            "publicId": "HE2",
+            "_id": "6a40fbd0c340736258dde147"
+          },
+          {
+            "url": "https://mishkwat.com/wp-content/uploads/2025/04/HE3-1.jpg",
+            "publicId": "HE3",
+            "_id": "6a40fbd0c340736258dde148"
+          },
+          {
+            "url": "https://mishkwat.com/wp-content/uploads/2025/04/HE4.jpg",
+            "publicId": "HE4",
+            "_id": "6a40fbd0c340736258dde149"
+          },
+          {
+            "url": "https://mishkwat.com/wp-content/uploads/2025/04/HE5-2.jpg",
+            "publicId": "HE5",
+            "_id": "6a40fbd0c340736258dde14a"
+          }
+        ],
+        "price": 550,
+        "salePrice": 320,
+        "stock": 500,
+        "totalRatings": 0,
+        "avgRating": 0,
+        "numReviews": 0,
+        "tags": [],
+        "isFeatured": true,
+        "isActive": true,
+        "arabicName": "",
+        "isHajjKit": false,
+        "isHalal": false,
+        "weight": 0,
+        "dimensions": {
+          "length": 0,
+          "width": 0,
+          "height": 0
+        },
+        "specifications": [],
+        "createdAt": "2026-06-28T10:47:44.414Z",
+        "updatedAt": "2026-07-05T10:13:56.913Z",
+        "slug": "mishkwat-hajj-wal-umrah-roman-urdu-script-mqxo0en2",
+        "__v": 0,
+        "subcategory": "6a40fbbe136a2f790c55d0c5"
+      },
+      {
+        "_id": "6a40fbd0c340736258dde13e",
+        "title": "Mishkwatul Hajj Wal Umrah (Urdu)",
+        "description": "Hajj & Umrah Prayers (Dua) Card in Arabic with Urdu translation. Includes a complete Umrah checklist, a 5-day Hajj planner, and 33 essential supplications organized to guide pilgrims step by step through their journey.\n\nProduct Details:\n- Language: Arabic with Urdu Translation\n- Total Cards: 19 Flash Cards\n- Paper Quality: Premium 300 GSM Art Card with Gloss Lamination\n- Size: 69mm x 85mm\n- Accessories: Stainless Steel Ring Binding, Tawaf Tasbih (7-bead counter), Neck Lanyard\n\nCovers: Dua for Safar, Umrah Checklist, Intention for Ihram, Talbiyah, Entering Masjid al-Haram, Duas during Tawaf, At Rukn-e-Yamani, Zamzam Water, Sa'i, 5-Day Hajj Planner (8th–12th Dhul Hijjah), Duas at Mina, Arafat, Muzdalifah, Rami of Jamaraat, Tawaf-e-Wida, Ziyarat of Madinah, Salaam at Roza-e-Rasool ﷺ.",
+        "category": {
+          "_id": "6a40fbbe136a2f790c55d0c4",
+          "name": "Hajj & Umrah Series",
+          "slug": "hajj-umrah-series"
+        },
+        "brand": "Mishkwat Publications",
+        "images": [
+          {
+            "url": "https://mishkwat.com/wp-content/uploads/2025/04/HU1.jpg",
+            "publicId": "HU1",
+            "_id": "6a40fbd0c340736258dde13f"
+          },
+          {
+            "url": "https://mishkwat.com/wp-content/uploads/2025/04/HU3-1.jpg",
+            "publicId": "HU3",
+            "_id": "6a40fbd0c340736258dde140"
+          },
+          {
+            "url": "https://mishkwat.com/wp-content/uploads/2025/04/HU4.jpg",
+            "publicId": "HU4",
+            "_id": "6a40fbd0c340736258dde141"
+          }
+        ],
+        "price": 550,
+        "salePrice": 320,
+        "stock": 500,
+        "totalRatings": 0,
+        "avgRating": 0,
+        "numReviews": 0,
+        "tags": [],
+        "isFeatured": true,
+        "isActive": true,
+        "arabicName": "",
+        "isHajjKit": false,
+        "isHalal": false,
+        "weight": 0,
+        "dimensions": {
+          "length": 0,
+          "width": 0,
+          "height": 0
+        },
+        "specifications": [],
+        "createdAt": "2026-06-28T10:47:44.398Z",
+        "updatedAt": "2026-07-05T10:13:56.891Z",
+        "slug": "mishkwatul-hajj-wal-umrah-urdu-mqxo0emo",
+        "__v": 0,
+        "subcategory": "6a40fbbe136a2f790c55d0c5"
+      }
+    ],
+    "pagination": {
+      "page": 1,
+      "limit": 12,
+      "total": 10,
+      "pages": 1
+    }
+  }
+}
