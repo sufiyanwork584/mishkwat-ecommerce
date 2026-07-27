@@ -89,14 +89,14 @@ const CategoriesPage = () => {
 
                   {/* Subcategories Grid */}
                   {hasSubcategories && (
-                    <div className="border-t border-white/5 p-6 bg-dark-surface/10">
+                    <div className="border-t border-border/40 p-6 bg-background/30 dark:bg-dark-surface/10">
                       <p className="text-[10px] uppercase tracking-widest text-text-muted mb-4 font-bold">Sub-categories</p>
                       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
                         {subcategories.map((sub) => (
                           <Link
                             key={sub._id}
                             to={`/products?category=${sub.slug}`}
-                            className="flex items-center gap-3 p-3 rounded-xl bg-dark-surface/40 hover:bg-primary/10 border border-white/5 hover:border-primary/20 transition-all group/sub"
+                            className="flex items-center gap-3 p-3 rounded-xl bg-surface dark:bg-dark-surface/40 hover:bg-primary/10 border border-border/50 dark:border-white/5 hover:border-primary/20 transition-all group/sub"
                           >
                             {sub.image?.url ? (
                               <div className="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 border border-white/10">
@@ -107,7 +107,7 @@ const CategoriesPage = () => {
                                 <FiGrid className="w-4 h-4 text-primary/40" />
                               </div>
                             )}
-                            <span className="text-sm font-medium text-text-muted group-hover/sub:text-primary-light transition-colors line-clamp-1">
+                            <span className="text-sm font-medium text-text-muted group-hover/sub:text-primary transition-colors line-clamp-1">
                               {sub.name}
                             </span>
                           </Link>

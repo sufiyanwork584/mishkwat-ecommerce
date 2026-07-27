@@ -95,7 +95,7 @@ const ProfilePage = () => {
   };
 
   return (
-    <div className="bg-background text-text py-6 text-left space-y-6">
+    <div className="bg-background text-text py-6 text-left space-y-6 p-8">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/5 pb-6">
         <div>

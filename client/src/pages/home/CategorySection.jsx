@@ -150,7 +150,7 @@ const CategorySection = () => {
         <div className="flex justify-center mt-10">
           <Link 
             to="/categories" 
-            className="btn-secondary flex items-center gap-2"
+            className="btn-secondary flex items-center gap-2 px-3 py-2"
           >
             View All Categories <FiArrowRight />
           </Link>

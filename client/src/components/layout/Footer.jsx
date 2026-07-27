@@ -83,7 +83,7 @@ const Footer = () => {
                 { label: 'Home', path: '/' },
                 { label: 'Shop All', path: '/products' },
                 { label: 'Categories', path: '/categories' },
-                { label: 'Spiritual Guides', path: '/blogs' },
+                { label: 'Blogs', path: '/blogs' },
                 { label: 'About Mishkwat', path: '/about' },
                 { label: 'Contact Us', path: '/contact' },
               ].map((link) => (

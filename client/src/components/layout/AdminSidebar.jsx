@@ -48,9 +48,10 @@ const AdminSidebar = ({ collapsed, setCollapsed }) => {
       animate={{ x: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <div>
+      {/* Scrollable Container for Logo and Navigation Menu */}
+      <div className="flex flex-col flex-1 min-h-0 overflow-y-auto [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-thumb]:bg-dark-border [&::-webkit-scrollbar-thumb]:rounded-full">
         {/* Brand Logo Header */}
-        <div className="h-20 flex items-center justify-between px-6 border-b border-dark-border">
+        <div className="h-20 flex items-center justify-between px-6 border-b border-dark-border flex-shrink-0">
           {!collapsed && (
             <div className="flex items-center justify-between w-full">
               <NavLink to="/admin/dashboard" className="flex items-center gap-2">
@@ -78,7 +79,7 @@ const AdminSidebar = ({ collapsed, setCollapsed }) => {
         </div>
 
         {/* Navigation Menu */}
-        <nav className="p-4 space-y-2">
+        <nav className="p-4 space-y-2 flex-1">
           {menuItems.map((item) => {
             const Icon = item.icon;
             return (
@@ -106,7 +107,7 @@ const AdminSidebar = ({ collapsed, setCollapsed }) => {
       </div>
 
       {/* Sidebar Footer */}
-      <div className="p-4 border-t border-dark-border space-y-2">
+      <div className="p-4 border-t border-dark-border space-y-2 flex-shrink-0">
         <NavLink
           to="/"
           className="flex items-center gap-4 px-4 py-3 rounded-xl text-text-muted hover:bg-dark-card hover:text-text transition-all duration-200"

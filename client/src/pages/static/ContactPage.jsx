@@ -84,7 +84,7 @@ const ContactPage = () => {
                     required
                     type="text"
                     placeholder="John Doe"
-                    className="w-full bg-dark-card border border-dark-border rounded-xl px-4 py-3 text-text placeholder-slate-500 focus:border-[#6C5CE7] focus:outline-none transition-colors"
+                    className="w-full bg-surface/50 border border-border rounded-xl px-4 py-3 text-text placeholder-slate-500 focus:border-[#6C5CE7] focus:outline-none transition-colors"
                   />
                 </div>
                 <div>
@@ -93,7 +93,7 @@ const ContactPage = () => {
                     required
                     type="email"
                     placeholder="john@example.com"
-                    className="w-full bg-dark-card border border-dark-border rounded-xl px-4 py-3 text-text placeholder-slate-500 focus:border-[#6C5CE7] focus:outline-none transition-colors"
+                    className="w-full bg-surface/50 border border-border rounded-xl px-4 py-3 text-text placeholder-slate-500 focus:border-[#6C5CE7] focus:outline-none transition-colors"
                   />
                 </div>
               </div>
@@ -103,7 +103,7 @@ const ContactPage = () => {
                   required
                   type="text"
                   placeholder="How can we help?"
-                  className="w-full bg-dark-card border border-dark-border rounded-xl px-4 py-3 text-text placeholder-slate-500 focus:border-[#6C5CE7] focus:outline-none transition-colors"
+                  className="w-full bg-surface/50 border border-border rounded-xl px-4 py-3 text-text placeholder-slate-500 focus:border-[#6C5CE7] focus:outline-none transition-colors"
                 />
               </div>
               <div>
@@ -112,7 +112,7 @@ const ContactPage = () => {
                   required
                   rows={5}
                   placeholder="Tell us what's on your mind..."
-                  className="w-full bg-dark-card border border-dark-border rounded-xl px-4 py-3 text-text placeholder-slate-500 focus:border-[#6C5CE7] focus:outline-none transition-colors resize-none"
+                  className="w-full bg-surface/50 border border-border rounded-xl px-4 py-3 text-text placeholder-slate-500 focus:border-[#6C5CE7] focus:outline-none transition-colors resize-none"
                 />
               </div>
               <button

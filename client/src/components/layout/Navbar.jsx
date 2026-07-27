@@ -19,7 +19,7 @@ const navLinks = [
   { label: 'Home', path: '/', icon: FiHome },
   { label: 'Shop', path: '/products', icon: FiShoppingBag },
   { label: 'Categories', path: '/categories', icon: FiGrid },
-  { label: 'Guides', path: '/blogs', icon: FiBookOpen },
+  { label: 'Blogs', path: '/blogs', icon: FiBookOpen },
 ];
 
 const Navbar = () => {
@@ -100,7 +100,7 @@ const Navbar = () => {
             <span className="flex items-center gap-2">
               <span className="text-primary-light">🕋 {getHijriDate()}</span>
               <span className="opacity-50">|</span>
-              <span>Welcome to Mishkwat - Premium Islamic Lifestyle</span>
+              <span>Welcome to Mishkwat - Premium Haj-Umrah Guides</span>
             </span>
             <div className="flex items-center gap-5 uppercase text-[10px] tracking-widest">
               <Link to="/about" className="hover:text-primary-light transition-colors">About Us</Link>
@@ -134,11 +134,10 @@ const Navbar = () => {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all ${
-                    location.pathname === link.path
-                      ? 'text-primary bg-surface'
-                      : 'text-text-muted hover:text-text hover:bg-surface'
-                  }`}
+                  className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all ${location.pathname === link.path
+                    ? 'text-primary bg-surface'
+                    : 'text-text-muted hover:text-text hover:bg-surface'
+                    }`}
                 >
                   {link.label}
                 </Link>
@@ -169,7 +168,7 @@ const Navbar = () => {
 
             {/* Action Buttons */}
             <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
-              
+
               {/* Theme Toggle Button */}
               <button
                 onClick={() => dispatch(toggleDarkMode())}
@@ -334,11 +333,10 @@ const Navbar = () => {
                     <Link
                       key={link.path}
                       to={link.path}
-                      className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-semibold transition-colors ${
-                        location.pathname === link.path
-                          ? 'text-primary bg-surface'
-                          : 'text-text-muted hover:text-text hover:bg-surface'
-                      }`}
+                      className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-semibold transition-colors ${location.pathname === link.path
+                        ? 'text-primary bg-surface'
+                        : 'text-text-muted hover:text-text hover:bg-surface'
+                        }`}
                     >
                       <link.icon size={18} /> {link.label}
                     </Link>

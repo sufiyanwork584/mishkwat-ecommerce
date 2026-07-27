@@ -48,7 +48,7 @@ const DashboardPage = () => {
   }
 
   return (
-    <div className="bg-background text-text py-6 text-left">
+    <div className="bg-background text-text py-6 text-left p-8">
       <div className="space-y-8">
         {/* Welcome Section */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/5 pb-6">
