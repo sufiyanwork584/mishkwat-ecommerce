@@ -50,8 +50,6 @@ app.use(mongoSanitize());
 app.use(hpp());
 
 // --------------- CORS CONFIGURATION ---------------
-// Cross-Origin Resource Sharing (CORS) controls which domains can access this API.
-// process.env.CLIENT_URL should be set in production (e.g. https://mishkwat.vercel.app)
 const allowedOrigins = [
   "http://localhost:3000",
   "http://localhost:5173",
@@ -60,19 +58,24 @@ const allowedOrigins = [
 
 app.use(cors({
   origin: (origin, callback) => {
+    // Allow requests without an Origin (Postman, server-to-server, health checks)
+    if (!origin) {
+      return callback(null, true);
+    }
+
+    // Allow localhost, your production domain, and ALL Vercel preview deployments
     if (
-      !origin ||
       allowedOrigins.includes(origin) ||
       origin.endsWith(".vercel.app")
     ) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
+      return callback(null, true);
     }
+
+    return callback(new Error(`CORS blocked: ${origin}`));
   },
   credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
 }));
 
 // Serve static files from the 'public/uploads' directory directly to the web
