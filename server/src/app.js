@@ -52,20 +52,19 @@ app.use(hpp());
 // --------------- CORS CONFIGURATION ---------------
 // Cross-Origin Resource Sharing (CORS) controls which domains can access this API.
 const allowedOrigins = [
+  "http://localhost:3000",
+  "http://localhost:5173",
+  "https://mishkwat-ecommerce-f0xuq9eie-sufiyanwork584s-projects.vercel.app",
   process.env.CLIENT_URL
 ].filter(Boolean);
 
 app.use(cors({
   origin: function (origin, callback) {
-    if (!origin) return callback(null, true);
-    // Allow local origins only in development mode
-    if (process.env.NODE_ENV !== 'production' && (origin.startsWith('http://localhost:') || origin.startsWith('http://127.0.0.1:'))) {
-      return callback(null, true);
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
     }
-    if (allowedOrigins.includes(origin)) {
-      return callback(null, true);
-    }
-    return callback(null, false);
   },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
