@@ -51,16 +51,20 @@ app.use(hpp());
 
 // --------------- CORS CONFIGURATION ---------------
 // Cross-Origin Resource Sharing (CORS) controls which domains can access this API.
+// process.env.CLIENT_URL should be set in production (e.g. https://mishkwat.vercel.app)
 const allowedOrigins = [
   "http://localhost:3000",
   "http://localhost:5173",
-  "https://mishkwat-ecommerce-f0xuq9eie-sufiyanwork584s-projects.vercel.app",
   process.env.CLIENT_URL
 ].filter(Boolean);
 
 app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
+  origin: (origin, callback) => {
+    if (
+      !origin ||
+      allowedOrigins.includes(origin) ||
+      origin.endsWith(".vercel.app")
+    ) {
       callback(null, true);
     } else {
       callback(new Error("Not allowed by CORS"));
