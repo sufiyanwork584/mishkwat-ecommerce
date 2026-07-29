@@ -36,8 +36,10 @@ const Navbar = () => {
 
   const [searchQuery, setSearchQuery] = useState('');
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
+  const [isMobileUserMenuOpen, setIsMobileUserMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const userMenuRef = useRef(null);
+  const mobileUserMenuRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -55,10 +57,21 @@ const Navbar = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  useEffect(() => {
+    const handleMobileClickOutside = (e) => {
+      if (mobileUserMenuRef.current && !mobileUserMenuRef.current.contains(e.target)) {
+        setIsMobileUserMenuOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleMobileClickOutside);
+    return () => document.removeEventListener('mousedown', handleMobileClickOutside);
+  }, []);
+
   // Close mobile menu on route change
   useEffect(() => {
     dispatch(toggleMobileMenu(false));
     setIsUserMenuOpen(false);
+    setIsMobileUserMenuOpen(false);
   }, [location.pathname, dispatch]);
 
   const handleSearch = (e) => {
@@ -215,9 +228,9 @@ const Navbar = () => {
                 )}
               </Link>
 
-              {/* User Menu */}
+              {/* User Menu – Desktop only */}
               {isAuthenticated ? (
-                <div className="relative" ref={userMenuRef}>
+                <div className="relative hidden lg:block" ref={userMenuRef}>
                   <button
                     onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
                     className="flex items-center gap-2 p-1.5 text-text-muted hover:text-text rounded-lg hover:bg-surface transition-colors"
@@ -225,7 +238,7 @@ const Navbar = () => {
                     <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white text-sm font-bold">
                       {user?.name?.charAt(0).toUpperCase() || 'U'}
                     </div>
-                    <FiChevronDown size={14} className={`hidden sm:block transition-transform ${isUserMenuOpen ? 'rotate-180' : ''}`} />
+                    <FiChevronDown size={14} className={`transition-transform ${isUserMenuOpen ? 'rotate-180' : ''}`} />
                   </button>
 
                   <AnimatePresence>
@@ -272,11 +285,60 @@ const Navbar = () => {
               ) : (
                 <Link
                   to="/login"
-                  className="flex items-center gap-2 px-4 py-2 bg-primary hover:bg-primary-dark text-white rounded-full text-sm font-semibold transition-colors"
+                  className="hidden lg:flex items-center gap-2 px-4 py-2 bg-primary hover:bg-primary-dark text-white rounded-full text-sm font-semibold transition-colors"
                 >
                   <FiUser size={16} />
-                  <span className="hidden sm:inline">Sign In</span>
+                  <span>Sign In</span>
                 </Link>
+              )}
+
+              {/* User Icon – Mobile only */}
+              {isAuthenticated ? (
+                <div className="relative lg:hidden" ref={mobileUserMenuRef}>
+                  <button
+                    onClick={() => setIsMobileUserMenuOpen(!isMobileUserMenuOpen)}
+                    className="p-2.5 text-text-muted hover:text-text rounded-lg hover:bg-surface transition-colors"
+                    aria-label="User menu"
+                  >
+                    <FiUser size={20} />
+                  </button>
+                  <AnimatePresence>
+                    {isMobileUserMenuOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 8, scale: 0.96 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: 8, scale: 0.96 }}
+                        transition={{ duration: 0.15 }}
+                        className="absolute right-0 top-full mt-2 w-48 bg-background border border-border rounded-xl shadow-2xl overflow-hidden z-[60]"
+                      >
+                        <div className="p-1.5">
+                          <Link
+                            to="/dashboard/profile"
+                            className="flex items-center gap-2.5 px-3 py-2 text-sm text-text-muted hover:text-text hover:bg-surface rounded-lg transition-colors"
+                          >
+                            <FiUser size={16} /> My Account
+                          </Link>
+                        </div>
+                        <div className="p-1.5 border-t border-border">
+                          <button
+                            onClick={handleLogout}
+                            className="flex items-center gap-2.5 px-3 py-2 text-sm text-red-500 hover:text-red-400 hover:bg-red-500/10 rounded-lg transition-colors w-full text-left"
+                          >
+                            <FiLogOut size={16} /> Logout
+                          </button>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ) : (
+                <button
+                  onClick={() => navigate('/login')}
+                  className="lg:hidden p-2.5 text-text-muted hover:text-text rounded-lg hover:bg-surface transition-colors"
+                  aria-label="Sign in"
+                >
+                  <FiUser size={20} />
+                </button>
               )}
             </div>
           </div>
@@ -346,9 +408,14 @@ const Navbar = () => {
                 <hr className="border-border my-4" />
 
                 <div className="space-y-1">
+                  <p className="px-4 pb-1 text-[10px] font-bold uppercase tracking-widest text-text-muted">Customer Service</p>
+                  <Link to="/contact" className="block px-4 py-2.5 text-sm text-text-muted hover:text-text hover:bg-surface rounded-lg transition-colors">Contact Us</Link>
                   <Link to="/about" className="block px-4 py-2.5 text-sm text-text-muted hover:text-text hover:bg-surface rounded-lg transition-colors">About Us</Link>
-                  <Link to="/contact" className="block px-4 py-2.5 text-sm text-text-muted hover:text-text hover:bg-surface rounded-lg transition-colors">Contact</Link>
                   <Link to="/faq" className="block px-4 py-2.5 text-sm text-text-muted hover:text-text hover:bg-surface rounded-lg transition-colors">FAQ</Link>
+                  <Link to="/privacy" className="block px-4 py-2.5 text-sm text-text-muted hover:text-text hover:bg-surface rounded-lg transition-colors">Privacy Policy</Link>
+                  <Link to="/terms" className="block px-4 py-2.5 text-sm text-text-muted hover:text-text hover:bg-surface rounded-lg transition-colors">Terms &amp; Conditions</Link>
+                  <Link to="/shipping" className="block px-4 py-2.5 text-sm text-text-muted hover:text-text hover:bg-surface rounded-lg transition-colors">Shipping Policy</Link>
+                  <Link to="/returns" className="block px-4 py-2.5 text-sm text-text-muted hover:text-text hover:bg-surface rounded-lg transition-colors">Return &amp; Refund Policy</Link>
                 </div>
               </div>
             </motion.div>
