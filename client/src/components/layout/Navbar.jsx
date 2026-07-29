@@ -9,7 +9,7 @@ import {
 import { selectUser, selectIsAuthenticated, selectIsAdmin, logout } from '../../features/authSlice';
 import { selectCartCount } from '../../features/cartSlice';
 import { selectWishlistCount } from '../../features/wishlistSlice';
-import { selectIsDarkMode, toggleDarkMode, toggleMobileMenu, selectIsMobileMenuOpen } from '../../features/uiSlice';
+import { selectIsDarkMode, toggleDarkMode, toggleMobileMenu, selectIsMobileMenuOpen, setMobileMenuOpen } from '../../features/uiSlice';
 import { clearCartState } from '../../features/cartSlice';
 import { clearWishlistState } from '../../features/wishlistSlice';
 import { authApi } from '../../api/authApi';
@@ -69,7 +69,7 @@ const Navbar = () => {
 
   // Close mobile menu on route change
   useEffect(() => {
-    dispatch(toggleMobileMenu(false));
+    dispatch(setMobileMenuOpen(false));
     setIsUserMenuOpen(false);
     setIsMobileUserMenuOpen(false);
   }, [location.pathname, dispatch]);
