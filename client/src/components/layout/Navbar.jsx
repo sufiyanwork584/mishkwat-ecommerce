@@ -180,12 +180,12 @@ const Navbar = () => {
             </form>
 
             {/* Action Buttons */}
-            <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
+            <div className="flex items-center gap-0.5 sm:gap-1.5 flex-shrink-0">
 
-              {/* Theme Toggle Button */}
+              {/* Theme Toggle Button – desktop only; moved to drawer on mobile */}
               <button
                 onClick={() => dispatch(toggleDarkMode())}
-                className="p-2.5 text-text-muted hover:text-primary rounded-lg hover:bg-surface transition-colors"
+                className="hidden lg:block p-2.5 text-text-muted hover:text-primary rounded-lg hover:bg-surface transition-colors"
                 aria-label="Toggle theme"
               >
                 {isDarkMode ? <FiSun size={20} /> : <FiMoon size={20} />}
@@ -368,12 +368,22 @@ const Navbar = () => {
                   <Link to="/" className="flex items-center gap-2">
                     <img src="/logo.svg" alt="Mishkwat" className="h-10 w-auto object-contain" />
                   </Link>
-                  <button
-                    onClick={() => dispatch(toggleMobileMenu())}
-                    className="p-2 text-text-muted hover:text-text rounded-lg hover:bg-surface"
-                  >
-                    <FiX size={20} />
-                  </button>
+                  <div className="flex items-center gap-1">
+                    {/* Dark mode toggle inside drawer */}
+                    <button
+                      onClick={() => dispatch(toggleDarkMode())}
+                      className="p-2 text-text-muted hover:text-primary rounded-lg hover:bg-surface transition-colors"
+                      aria-label="Toggle theme"
+                    >
+                      {isDarkMode ? <FiSun size={18} /> : <FiMoon size={18} />}
+                    </button>
+                    <button
+                      onClick={() => dispatch(toggleMobileMenu())}
+                      className="p-2 text-text-muted hover:text-text rounded-lg hover:bg-surface"
+                    >
+                      <FiX size={20} />
+                    </button>
+                  </div>
                 </div>
 
                 {/* Mobile Search */}
