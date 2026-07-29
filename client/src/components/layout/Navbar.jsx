@@ -371,7 +371,7 @@ const Navbar = () => {
               <div className="p-5">
                 <div className="flex items-center justify-between mb-6">
                   <Link to="/" className="flex items-center gap-2">
-                    <img src="/logo.svg" alt="Mishkwat" className="h-10 w-auto object-contain" />
+                    <img src="/logo.svg.webp" alt="Mishkwat" className="h-10 w-auto object-contain" />
                   </Link>
                   <div className="flex items-center gap-1">
                     {/* Dark mode toggle inside drawer */}
