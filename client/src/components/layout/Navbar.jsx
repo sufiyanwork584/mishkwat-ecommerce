@@ -191,19 +191,10 @@ const Navbar = () => {
                 {isDarkMode ? <FiSun size={20} /> : <FiMoon size={20} />}
               </button>
 
-              {/* Search icon – visible on sm and md screens (not lg+) */}
-              <button
-                onClick={() => navigate('/products')}
-                className="lg:hidden p-2.5 text-text-muted hover:text-text rounded-lg hover:bg-surface transition-colors"
-                aria-label="Search"
-              >
-                <FiSearch size={20} />
-              </button>
-
-              {/* Wishlist */}
+              {/* Wishlist – mobile header icon (replaces search slot) */}
               <Link
                 to="/wishlist"
-                className="relative p-2.5 text-text-muted hover:text-text rounded-lg hover:bg-surface transition-colors"
+                className="lg:hidden relative p-2.5 text-text-muted hover:text-text rounded-lg hover:bg-surface transition-colors"
                 aria-label="Wishlist"
               >
                 <FiHeart size={20} />
@@ -214,16 +205,16 @@ const Navbar = () => {
                 )}
               </Link>
 
-              {/* Cart */}
+              {/* Wishlist – desktop only */}
               <Link
-                to="/cart"
-                className="relative p-2.5 text-text-muted hover:text-text rounded-lg hover:bg-surface transition-colors"
-                aria-label="Cart"
+                to="/wishlist"
+                className="hidden lg:flex relative p-2.5 text-text-muted hover:text-text rounded-lg hover:bg-surface transition-colors"
+                aria-label="Wishlist"
               >
-                <FiShoppingCart size={20} />
-                {cartCount > 0 && (
-                  <span className="absolute -top-0.5 -right-0.5 w-5 h-5 flex items-center justify-center text-[10px] font-bold text-white bg-primary rounded-full">
-                    {cartCount > 9 ? '9+' : cartCount}
+                <FiHeart size={20} />
+                {wishlistCount > 0 && (
+                  <span className="absolute -top-0.5 -right-0.5 w-5 h-5 flex items-center justify-center text-[10px] font-bold text-white bg-red-500 rounded-full">
+                    {wishlistCount}
                   </span>
                 )}
               </Link>
@@ -292,7 +283,7 @@ const Navbar = () => {
                 </Link>
               )}
 
-              {/* User Icon – Mobile only */}
+              {/* User Icon – Mobile only (shown BEFORE cart) */}
               {isAuthenticated ? (
                 <div className="relative lg:hidden" ref={mobileUserMenuRef}>
                   <button
@@ -340,6 +331,20 @@ const Navbar = () => {
                   <FiUser size={20} />
                 </button>
               )}
+
+              {/* Cart – all screens */}
+              <Link
+                to="/cart"
+                className="relative p-2.5 text-text-muted hover:text-text rounded-lg hover:bg-surface transition-colors"
+                aria-label="Cart"
+              >
+                <FiShoppingCart size={20} />
+                {cartCount > 0 && (
+                  <span className="absolute -top-0.5 -right-0.5 w-5 h-5 flex items-center justify-center text-[10px] font-bold text-white bg-primary rounded-full">
+                    {cartCount > 9 ? '9+' : cartCount}
+                  </span>
+                )}
+              </Link>
             </div>
           </div>
         </div>
@@ -427,6 +432,19 @@ const Navbar = () => {
                   <Link to="/shipping" className="block px-4 py-2.5 text-sm text-text-muted hover:text-text hover:bg-surface rounded-lg transition-colors">Shipping Policy</Link>
                   <Link to="/returns" className="block px-4 py-2.5 text-sm text-text-muted hover:text-text hover:bg-surface rounded-lg transition-colors">Return &amp; Refund Policy</Link>
                 </div>
+
+                {/* Drawer Logout – authenticated only */}
+                {isAuthenticated && (
+                  <>
+                    <hr className="border-border my-4" />
+                    <button
+                      onClick={handleLogout}
+                      className="flex items-center gap-3 w-full px-4 py-3 rounded-lg text-sm font-semibold text-red-500 hover:text-red-400 hover:bg-red-500/10 transition-colors"
+                    >
+                      <FiLogOut size={18} /> Logout
+                    </button>
+                  </>
+                )}
               </div>
             </motion.div>
           </>
