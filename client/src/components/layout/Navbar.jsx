@@ -205,6 +205,20 @@ const Navbar = () => {
                 )}
               </Link>
 
+              {/* Cart – mobile header icon (beside wishlist) */}
+              <Link
+                to="/cart"
+                className="lg:hidden relative p-2.5 text-text-muted hover:text-text rounded-lg hover:bg-surface transition-colors"
+                aria-label="Cart"
+              >
+                <FiShoppingCart size={20} />
+                {cartCount > 0 && (
+                  <span className="absolute -top-0.5 -right-0.5 w-5 h-5 flex items-center justify-center text-[10px] font-bold text-white bg-primary rounded-full">
+                    {cartCount > 9 ? '9+' : cartCount}
+                  </span>
+                )}
+              </Link>
+
               {/* Wishlist – desktop only */}
               <Link
                 to="/wishlist"
@@ -235,12 +249,12 @@ const Navbar = () => {
                   <AnimatePresence>
                     {isUserMenuOpen && (
                       <motion.div
-                        initial={{ opacity: 0, y: 8, scale: 0.96 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: 8, scale: 0.96 }}
-                        transition={{ duration: 0.15 }}
-                        className="absolute right-0 top-full mt-2 w-56 bg-background border border-border rounded-xl shadow-2xl overflow-hidden z-[60]"
-                      >
+                          initial={{ opacity: 0, y: 8, scale: 0.96 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          exit={{ opacity: 0, y: 8, scale: 0.96 }}
+                          transition={{ duration: 0.15 }}
+                          className="absolute right-0 top-full mt-2 w-56 bg-background border border-border rounded-xl shadow-2xl overflow-hidden z-[60]"
+                        >
                         <div className="p-3 border-b border-border">
                           <p className="text-sm font-semibold text-text truncate">{user?.name}</p>
                           <p className="text-xs text-text-muted truncate">{user?.email}</p>
@@ -283,7 +297,7 @@ const Navbar = () => {
                 </Link>
               )}
 
-              {/* User Icon – Mobile only (shown BEFORE cart) */}
+              {/* User Icon – Mobile only (shown AFTER cart) */}
               {isAuthenticated ? (
                 <div className="relative lg:hidden" ref={mobileUserMenuRef}>
                   <button
@@ -332,10 +346,10 @@ const Navbar = () => {
                 </button>
               )}
 
-              {/* Cart – all screens */}
+              {/* Cart – desktop only */}
               <Link
                 to="/cart"
-                className="relative p-2.5 text-text-muted hover:text-text rounded-lg hover:bg-surface transition-colors"
+                className="hidden lg:flex relative p-2.5 text-text-muted hover:text-text rounded-lg hover:bg-surface transition-colors"
                 aria-label="Cart"
               >
                 <FiShoppingCart size={20} />
