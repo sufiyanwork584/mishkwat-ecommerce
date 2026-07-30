@@ -19,7 +19,19 @@ const DealsSection = () => {
   });
 
   const deals = data?.data?.deals || [];
-  const deal = deals.length > 0 ? deals[0] : null;
+
+  const defaultDeal = {
+    title: 'Deals of the Week',
+    subtitle: 'Premium Hajj & Umrah Essentials',
+    description: 'Get high-quality ihram belts, prayer mats, and travel essentials with up to 30% off this week. Premium quality products curated for your spiritual journey.',
+    offerText: 'Limited Offer',
+    buttonText: 'Shop Essentials',
+    buttonLink: '/products',
+    backgroundImage: { url: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=1200&q=80' },
+    productImage: { url: 'https://images.unsplash.com/photo-1609599006353-e629f1d2961f?w=600&q=80' }
+  };
+
+  const deal = deals.length > 0 ? deals[0] : defaultDeal;
 
   // Countdown timer to deal end date or midnight
   const getTargetTime = () => {
@@ -43,8 +55,8 @@ const DealsSection = () => {
     return () => clearInterval(interval);
   }, [deal]);
 
-  // If loading or no active deal, render nothing — no empty spacing or layout shift
-  if (isLoading || !deal) return null;
+  // If loading, render nothing — no empty spacing or layout shift
+  if (isLoading) return null;
 
   const formatTime = (timeMs) => {
     const totalSecs = Math.floor(timeMs / 1000);

@@ -22,6 +22,7 @@ const AdminDealsPage = () => {
     onSuccess: () => {
       toast.success('Deal deleted');
       queryClient.invalidateQueries({ queryKey: ['adminDeals'] });
+      queryClient.invalidateQueries({ queryKey: ['publicDeals'] });
     },
     onError: () => toast.error('Failed to delete deal'),
   });
@@ -149,6 +150,7 @@ const DealModal = ({ onClose, deal }) => {
     onSuccess: () => {
       toast.success(`Deal ${deal ? 'updated' : 'created'} successfully`);
       queryClient.invalidateQueries({ queryKey: ['adminDeals'] });
+      queryClient.invalidateQueries({ queryKey: ['publicDeals'] });
       onClose();
     },
     onError: (error) => toast.error(error.response?.data?.message || 'Something went wrong'),

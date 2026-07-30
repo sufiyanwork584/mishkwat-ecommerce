@@ -22,6 +22,7 @@ const AdminBannersPage = () => {
     onSuccess: () => {
       toast.success('Banner deleted');
       queryClient.invalidateQueries({ queryKey: ['adminBanners'] });
+      queryClient.invalidateQueries({ queryKey: ['publicBanners'] });
     },
     onError: () => toast.error('Failed to delete banner'),
   });
@@ -125,6 +126,7 @@ const BannerModal = ({ onClose, banner }) => {
     onSuccess: () => {
       toast.success(`Banner ${banner ? 'updated' : 'created'} successfully`);
       queryClient.invalidateQueries({ queryKey: ['adminBanners'] });
+      queryClient.invalidateQueries({ queryKey: ['publicBanners'] });
       onClose();
     },
     onError: (error) => toast.error(error.response?.data?.message || 'Something went wrong'),

@@ -67,6 +67,7 @@ const AdminProductsPage = () => {
     onSuccess: () => {
       toast.success('Product deleted successfully');
       queryClient.invalidateQueries({ queryKey: ['adminProducts'] });
+      queryClient.invalidateQueries({ queryKey: ['products'] });
     },
     onError: () => toast.error('Failed to delete product'),
   });
@@ -348,6 +349,7 @@ const ProductModal = ({ isOpen, onClose, product, defaultCategory = '', defaultS
     onSuccess: () => {
       toast.success(`Product ${product ? 'updated' : 'created'} successfully`);
       queryClient.invalidateQueries({ queryKey: ['adminProducts'] });
+      queryClient.invalidateQueries({ queryKey: ['products'] });
       onClose();
     },
     onError: (error) => {
