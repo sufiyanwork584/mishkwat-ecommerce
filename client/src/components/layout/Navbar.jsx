@@ -287,6 +287,20 @@ const Navbar = () => {
                 )}
               </Link>
 
+              {/* Cart – desktop only */}
+              <Link
+                to="/cart"
+                className="hidden lg:flex relative p-2.5 text-text-muted hover:text-text rounded-lg hover:bg-surface transition-colors"
+                aria-label="Cart"
+              >
+                <FiShoppingCart size={20} />
+                {cartCount > 0 && (
+                  <span className="absolute -top-0.5 -right-0.5 w-5 h-5 flex items-center justify-center text-[10px] font-bold text-white bg-primary rounded-full">
+                    {cartCount > 9 ? '9+' : cartCount}
+                  </span>
+                )}
+              </Link>
+
               {/* User Menu – Desktop only */}
               {isAuthenticated ? (
                 <div className="relative hidden lg:block" ref={userMenuRef}>
@@ -354,20 +368,6 @@ const Navbar = () => {
                   <span>Sign In</span>
                 </Link>
               )}
-
-              {/* Cart – desktop only */}
-              <Link
-                to="/cart"
-                className="hidden lg:flex relative p-2.5 text-text-muted hover:text-text rounded-lg hover:bg-surface transition-colors"
-                aria-label="Cart"
-              >
-                <FiShoppingCart size={20} />
-                {cartCount > 0 && (
-                  <span className="absolute -top-0.5 -right-0.5 w-5 h-5 flex items-center justify-center text-[10px] font-bold text-white bg-primary rounded-full">
-                    {cartCount > 9 ? '9+' : cartCount}
-                  </span>
-                )}
-              </Link>
             </div>
           </div>
         </div>

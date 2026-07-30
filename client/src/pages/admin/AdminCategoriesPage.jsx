@@ -215,7 +215,7 @@ const AdminCategoriesPage = () => {
                                 <FiEye size={18} />
                               </button>
                               <button 
-                                onClick={() => openModal(null, sub)}
+                                onClick={() => navigate(`/admin/products?action=add&category=${category._id}&subcategory=${sub._id}`)}
                                 className="text-text-muted hover:text-green-400 transition-colors"
                                 title="Add Product"
                               >
