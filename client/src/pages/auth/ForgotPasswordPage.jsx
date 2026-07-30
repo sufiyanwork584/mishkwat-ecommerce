@@ -92,7 +92,7 @@ const ForgotPasswordPage = () => {
                 We have sent a secure link to reset your password. If you don't receive it in a few minutes, please check your spam folder.
               </p>
 
-              {devResetUrl && (
+              {devResetUrl && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') && (
                 <div className="p-3 bg-primary/10 border border-primary/20 rounded-xl text-left space-y-2">
                   <p className="text-xs font-bold text-primary-light uppercase tracking-wider">Development Fallback Link:</p>
                   <p className="text-xs text-text-muted">Since email service is not configured locally, click below to reset your password:</p>
