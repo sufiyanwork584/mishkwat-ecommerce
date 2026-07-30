@@ -13,8 +13,7 @@
  */
 
 
-import dotenv from 'dotenv';
-dotenv.config(); // Load all variables from .env into process.env
+import './loadEnv.js';
 
 import app from './src/app.js';
 import connectToDatabase from './src/config/db.js';

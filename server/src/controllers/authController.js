@@ -204,17 +204,37 @@ export const forgotPassword = asyncHandler(async (req, res) => {
   console.log(resetUrl);
   console.log('=============================================\n');
 
-  await sendEmail({
-    to: user.email,
-    subject: 'Mishkwat - Password Reset Request',
-    html: passwordResetTemplate(resetUrl),
-  });
+  try {
+    await sendEmail({
+      to: user.email,
+      subject: 'Mishkwat - Password Reset Request',
+      html: passwordResetTemplate(resetUrl),
+    });
 
-  res.json({
-    success: true,
-    message: 'Password reset email sent',
-    resetUrl: process.env.NODE_ENV === 'development' ? resetUrl : undefined
-  });
+    res.json({
+      success: true,
+      message: 'Password reset email sent',
+      resetUrl: process.env.NODE_ENV === 'development' ? resetUrl : undefined
+    });
+  } catch (error) {
+    console.error('⚠️ Forgot password email sending failed:', error.message);
+    
+    // In development mode, we want to allow testing the reset flow via the console URL
+    if (process.env.NODE_ENV === 'development') {
+      return res.json({
+        success: true,
+        message: 'Password reset URL generated (Email failed to send, using fallback)',
+        resetUrl
+      });
+    }
+
+    // In production, clean up the reset token and throw error
+    user.resetPasswordToken = undefined;
+    user.resetPasswordExpire = undefined;
+    await user.save({ validateBeforeSave: false });
+
+    throw new AppError('Failed to send password reset email. Please try again later.', 500);
+  }
 });
 
 /** POST /api/v1/auth/reset-password/:token */
