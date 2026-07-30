@@ -793,6 +793,9 @@ const CheckoutPage = () => {
                     </Button>
                   </form>
                 )}
+                <p className="text-[10px] text-text-muted/70 italic leading-relaxed">
+                  *Note: Coupon eligibility criteria (like minimum purchase amounts) and discount calculations apply strictly to the Items Subtotal (before GST tax and shipping fees are added).
+                </p>
               </div>
             )}
 
