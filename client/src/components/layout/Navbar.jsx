@@ -179,19 +179,9 @@ const Navbar = () => {
               </div>
             </form>
 
-            {/* Action Buttons */}
             <div className="flex items-center gap-0.5 sm:gap-1.5 flex-shrink-0">
-
-              {/* Theme Toggle Button – desktop only; moved to drawer on mobile */}
-              <button
-                onClick={() => dispatch(toggleDarkMode())}
-                className="hidden lg:block p-2.5 text-text-muted hover:text-primary rounded-lg hover:bg-surface transition-colors"
-                aria-label="Toggle theme"
-              >
-                {isDarkMode ? <FiSun size={20} /> : <FiMoon size={20} />}
-              </button>
-
-              {/* Wishlist – mobile header icon (replaces search slot) */}
+              {/* MOBILE ICONS */}
+              {/* Wishlist – mobile header icon */}
               <Link
                 to="/wishlist"
                 className="lg:hidden relative p-2.5 text-text-muted hover:text-text rounded-lg hover:bg-surface transition-colors"
@@ -219,85 +209,7 @@ const Navbar = () => {
                 )}
               </Link>
 
-              {/* Wishlist – desktop only */}
-              <Link
-                to="/wishlist"
-                className="hidden lg:flex relative p-2.5 text-text-muted hover:text-text rounded-lg hover:bg-surface transition-colors"
-                aria-label="Wishlist"
-              >
-                <FiHeart size={20} />
-                {wishlistCount > 0 && (
-                  <span className="absolute -top-0.5 -right-0.5 w-5 h-5 flex items-center justify-center text-[10px] font-bold text-white bg-red-500 rounded-full">
-                    {wishlistCount}
-                  </span>
-                )}
-              </Link>
-
-              {/* User Menu – Desktop only */}
-              {isAuthenticated ? (
-                <div className="relative hidden lg:block" ref={userMenuRef}>
-                  <button
-                    onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
-                    className="flex items-center gap-2 p-1.5 text-text-muted hover:text-text rounded-lg hover:bg-surface transition-colors"
-                  >
-                    <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white text-sm font-bold">
-                      {user?.name?.charAt(0).toUpperCase() || 'U'}
-                    </div>
-                    <FiChevronDown size={14} className={`transition-transform ${isUserMenuOpen ? 'rotate-180' : ''}`} />
-                  </button>
-
-                  <AnimatePresence>
-                    {isUserMenuOpen && (
-                      <motion.div
-                          initial={{ opacity: 0, y: 8, scale: 0.96 }}
-                          animate={{ opacity: 1, y: 0, scale: 1 }}
-                          exit={{ opacity: 0, y: 8, scale: 0.96 }}
-                          transition={{ duration: 0.15 }}
-                          className="absolute right-0 top-full mt-2 w-56 bg-background border border-border rounded-xl shadow-2xl overflow-hidden z-[60]"
-                        >
-                        <div className="p-3 border-b border-border">
-                          <p className="text-sm font-semibold text-text truncate">{user?.name}</p>
-                          <p className="text-xs text-text-muted truncate">{user?.email}</p>
-                        </div>
-                        <div className="p-1.5">
-                          <Link to="/dashboard" className="flex items-center gap-2.5 px-3 py-2 text-sm text-text-muted hover:text-text hover:bg-surface rounded-lg transition-colors">
-                            <FiGrid size={16} /> Dashboard
-                          </Link>
-                          <Link to="/dashboard/orders" className="flex items-center gap-2.5 px-3 py-2 text-sm text-text-muted hover:text-text hover:bg-surface rounded-lg transition-colors">
-                            <FiPackage size={16} /> My Orders
-                          </Link>
-                          <Link to="/dashboard/profile" className="flex items-center gap-2.5 px-3 py-2 text-sm text-text-muted hover:text-text hover:bg-surface rounded-lg transition-colors">
-                            <FiSettings size={16} /> Settings
-                          </Link>
-                          {isAdmin && (
-                            <Link to="/admin/dashboard" className="flex items-center gap-2.5 px-3 py-2 text-sm text-primary hover:bg-surface rounded-lg transition-colors">
-                              <FiGrid size={16} /> Admin Panel
-                            </Link>
-                          )}
-                        </div>
-                        <div className="p-1.5 border-t border-border">
-                          <button
-                            onClick={handleLogout}
-                            className="flex items-center gap-2.5 px-3 py-2 text-sm text-red-500 hover:text-red-400 hover:bg-red-500/10 rounded-lg transition-colors w-full text-left"
-                          >
-                            <FiLogOut size={16} /> Sign Out
-                          </button>
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              ) : (
-                <Link
-                  to="/login"
-                  className="hidden lg:flex items-center gap-2 px-4 py-2 bg-primary hover:bg-primary-dark text-white rounded-full text-sm font-semibold transition-colors"
-                >
-                  <FiUser size={16} />
-                  <span>Sign In</span>
-                </Link>
-              )}
-
-              {/* User Icon – Mobile only (shown AFTER cart) */}
+              {/* User Icon – Mobile only (shown after cart) */}
               {isAuthenticated ? (
                 <div className="relative lg:hidden" ref={mobileUserMenuRef}>
                   <button
@@ -344,6 +256,94 @@ const Navbar = () => {
                 >
                   <FiUser size={20} />
                 </button>
+              )}
+
+              {/* DESKTOP ICONS */}
+              {/* Theme Toggle Button – desktop only */}
+              <button
+                onClick={() => dispatch(toggleDarkMode())}
+                className="hidden lg:block p-2.5 text-text-muted hover:text-primary rounded-lg hover:bg-surface transition-colors"
+                aria-label="Toggle theme"
+              >
+                {isDarkMode ? <FiSun size={20} /> : <FiMoon size={20} />}
+              </button>
+
+              {/* Wishlist – desktop only */}
+              <Link
+                to="/wishlist"
+                className="hidden lg:flex relative p-2.5 text-text-muted hover:text-text rounded-lg hover:bg-surface transition-colors"
+                aria-label="Wishlist"
+              >
+                <FiHeart size={20} />
+                {wishlistCount > 0 && (
+                  <span className="absolute -top-0.5 -right-0.5 w-5 h-5 flex items-center justify-center text-[10px] font-bold text-white bg-red-500 rounded-full">
+                    {wishlistCount}
+                  </span>
+                )}
+              </Link>
+
+              {/* User Menu – Desktop only */}
+              {isAuthenticated ? (
+                <div className="relative hidden lg:block" ref={userMenuRef}>
+                  <button
+                    onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
+                    className="flex items-center gap-2 p-1.5 text-text-muted hover:text-text rounded-lg hover:bg-surface transition-colors"
+                  >
+                    <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white text-sm font-bold">
+                      {user?.name?.charAt(0).toUpperCase() || 'U'}
+                    </div>
+                    <FiChevronDown size={14} className={`transition-transform ${isUserMenuOpen ? 'rotate-180' : ''}`} />
+                  </button>
+
+                  <AnimatePresence>
+                    {isUserMenuOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 8, scale: 0.96 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: 8, scale: 0.96 }}
+                        transition={{ duration: 0.15 }}
+                        className="absolute right-0 top-full mt-2 w-56 bg-background border border-border rounded-xl shadow-2xl overflow-hidden z-[60]"
+                      >
+                        <div className="p-3 border-b border-border">
+                          <p className="text-sm font-semibold text-text truncate">{user?.name}</p>
+                          <p className="text-xs text-text-muted truncate">{user?.email}</p>
+                        </div>
+                        <div className="p-1.5">
+                          <Link to="/dashboard" className="flex items-center gap-2.5 px-3 py-2 text-sm text-text-muted hover:text-text hover:bg-surface rounded-lg transition-colors">
+                            <FiGrid size={16} /> Dashboard
+                          </Link>
+                          <Link to="/dashboard/orders" className="flex items-center gap-2.5 px-3 py-2 text-sm text-text-muted hover:text-text hover:bg-surface rounded-lg transition-colors">
+                            <FiPackage size={16} /> My Orders
+                          </Link>
+                          <Link to="/dashboard/profile" className="flex items-center gap-2.5 px-3 py-2 text-sm text-text-muted hover:text-text hover:bg-surface rounded-lg transition-colors">
+                            <FiSettings size={16} /> Settings
+                          </Link>
+                          {isAdmin && (
+                            <Link to="/admin/dashboard" className="flex items-center gap-2.5 px-3 py-2 text-sm text-primary hover:bg-surface rounded-lg transition-colors">
+                              <FiGrid size={16} /> Admin Panel
+                            </Link>
+                          )}
+                        </div>
+                        <div className="p-1.5 border-t border-border">
+                          <button
+                            onClick={handleLogout}
+                            className="flex items-center gap-2.5 px-3 py-2 text-sm text-red-500 hover:text-red-400 hover:bg-red-500/10 rounded-lg transition-colors w-full text-left"
+                          >
+                            <FiLogOut size={16} /> Sign Out
+                          </button>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ) : (
+                <Link
+                  to="/login"
+                  className="hidden lg:flex items-center gap-2 px-4 py-2 bg-primary hover:bg-primary-dark text-white rounded-full text-sm font-semibold transition-colors"
+                >
+                  <FiUser size={16} />
+                  <span>Sign In</span>
+                </Link>
               )}
 
               {/* Cart – desktop only */}
@@ -438,13 +438,13 @@ const Navbar = () => {
 
                 <div className="space-y-1">
                   <p className="px-4 pb-1 text-[10px] font-bold uppercase tracking-widest text-text-muted">Customer Service</p>
-                  <Link to="/contact" className="block px-4 py-2.5 text-sm text-text-muted hover:text-text hover:bg-surface rounded-lg transition-colors">Contact Us</Link>
-                  <Link to="/about" className="block px-4 py-2.5 text-sm text-text-muted hover:text-text hover:bg-surface rounded-lg transition-colors">About Us</Link>
-                  <Link to="/faq" className="block px-4 py-2.5 text-sm text-text-muted hover:text-text hover:bg-surface rounded-lg transition-colors">FAQ</Link>
-                  <Link to="/privacy" className="block px-4 py-2.5 text-sm text-text-muted hover:text-text hover:bg-surface rounded-lg transition-colors">Privacy Policy</Link>
-                  <Link to="/terms" className="block px-4 py-2.5 text-sm text-text-muted hover:text-text hover:bg-surface rounded-lg transition-colors">Terms &amp; Conditions</Link>
+                  <Link to="/dashboard/profile" className="block px-4 py-2.5 text-sm text-text-muted hover:text-text hover:bg-surface rounded-lg transition-colors">My Account</Link>
+                  <Link to="/dashboard/orders" className="block px-4 py-2.5 text-sm text-text-muted hover:text-text hover:bg-surface rounded-lg transition-colors">Track Order</Link>
+                  <Link to="/returns" className="block px-4 py-2.5 text-sm text-text-muted hover:text-text hover:bg-surface rounded-lg transition-colors">Refund &amp; Cancellation</Link>
                   <Link to="/shipping" className="block px-4 py-2.5 text-sm text-text-muted hover:text-text hover:bg-surface rounded-lg transition-colors">Shipping Policy</Link>
-                  <Link to="/returns" className="block px-4 py-2.5 text-sm text-text-muted hover:text-text hover:bg-surface rounded-lg transition-colors">Return &amp; Refund Policy</Link>
+                  <Link to="/terms" className="block px-4 py-2.5 text-sm text-text-muted hover:text-text hover:bg-surface rounded-lg transition-colors">Terms &amp; Conditions</Link>
+                  <Link to="/privacy" className="block px-4 py-2.5 text-sm text-text-muted hover:text-text hover:bg-surface rounded-lg transition-colors">Privacy Policy</Link>
+                  <Link to="/faq" className="block px-4 py-2.5 text-sm text-text-muted hover:text-text hover:bg-surface rounded-lg transition-colors">FAQ</Link>
                 </div>
 
                 {/* Drawer Logout – authenticated only */}
