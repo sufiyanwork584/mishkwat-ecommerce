@@ -8,21 +8,10 @@ export const getDeals = asyncHandler(async (req, res) => {
     const now = new Date();
     filter = {
       isActive: true,
-      $and: [
-        {
-          $or: [
-            { startDate: { $exists: false } },
-            { startDate: null },
-            { startDate: { $lte: now } }
-          ]
-        },
-        {
-          $or: [
-            { endDate: { $exists: false } },
-            { endDate: null },
-            { endDate: { $gte: now } }
-          ]
-        }
+      $or: [
+        { endDate: { $exists: false } },
+        { endDate: null },
+        { endDate: { $gte: now } }
       ]
     };
   }
@@ -31,7 +20,7 @@ export const getDeals = asyncHandler(async (req, res) => {
 });
 
 export const createDeal = asyncHandler(async (req, res) => {
-  let backgroundImage = null;
+  let backgroundImage = { url: '', publicId: '' };
   let productImage = { url: '', publicId: '' };
 
   if (req.files) {
@@ -41,10 +30,6 @@ export const createDeal = asyncHandler(async (req, res) => {
     if (req.files.productImage && req.files.productImage[0]) {
       productImage = await uploadImage(req.files.productImage[0].buffer, 'nexabuy/deals');
     }
-  }
-
-  if (!backgroundImage) {
-    throw new AppError('Background image is required', 400);
   }
 
   const dealData = { ...req.body };

@@ -21,6 +21,14 @@ const dealSchema = new mongoose.Schema({
     default: '',
     trim: true,
   },
+  backgroundImage: {
+    url: { type: String },
+    publicId: { type: String },
+  },
+  productImage: {
+    url: { type: String },
+    publicId: { type: String },
+  },
   buttonText: {
     type: String,
     default: 'Unlock Deals',
@@ -30,14 +38,6 @@ const dealSchema = new mongoose.Schema({
     type: String,
     default: '/',
     trim: true,
-  },
-  backgroundImage: {
-    url: { type: String, required: [true, 'Background image URL is required'] },
-    publicId: { type: String, required: [true, 'Background image public ID is required'] },
-  },
-  productImage: {
-    url: { type: String, default: '' },
-    publicId: { type: String, default: '' },
   },
   startDate: {
     type: Date,

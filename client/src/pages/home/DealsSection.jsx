@@ -33,8 +33,24 @@ const DealsSection = () => {
 
   const deal = deals.length > 0 ? deals[0] : defaultDeal;
 
-  // Countdown timer to deal end date or midnight
+  // Check if deal is upcoming (i.e. starts in the future)
+  const [isUpcoming, setIsUpcoming] = useState(false);
+
+  useEffect(() => {
+    if (!deal) return;
+    const checkUpcoming = () => {
+      setIsUpcoming(deal.startDate ? (new Date(deal.startDate).getTime() > Date.now()) : false);
+    };
+    checkUpcoming();
+    const interval = setInterval(checkUpcoming, 1000);
+    return () => clearInterval(interval);
+  }, [deal]);
+
+  // Countdown target: if upcoming, count down to startDate. If active, count down to endDate or midnight.
   const getTargetTime = () => {
+    if (isUpcoming && deal?.startDate) {
+      return new Date(deal.startDate).getTime();
+    }
     if (deal?.endDate) {
       return new Date(deal.endDate).getTime();
     }
@@ -53,7 +69,7 @@ const DealsSection = () => {
       setTimeLeft(calcRemaining());
     }, 1000);
     return () => clearInterval(interval);
-  }, [deal]);
+  }, [deal, isUpcoming]);
 
   // If loading, render nothing — no empty spacing or layout shift
   if (isLoading) return null;
@@ -73,6 +89,8 @@ const DealsSection = () => {
 
   const time = formatTime(timeLeft);
 
+  const buttonDestination = deal.buttonLink || deal.buttonUrl || deal.link || '/products';
+
   return (
     <section className="py-16 bg-background transition-colors duration-300 border-t border-border">
       <div className="container-custom">
@@ -91,7 +109,7 @@ const DealsSection = () => {
 
           <div className="relative z-10 text-left space-y-6 lg:max-w-xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-wider">
-              <FiClock className="animate-spin-slow" /> {deal.offerText || 'Special Offer'}
+              <FiClock className="animate-spin-slow" /> {isUpcoming ? 'Upcoming Deal' : (deal.offerText || 'Special Offer')}
             </div>
 
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-text leading-tight">
@@ -103,33 +121,38 @@ const DealsSection = () => {
             </p>
 
             {/* Countdown timer widgets */}
-            <div className="flex items-center gap-4 pt-2">
-              <div className="flex flex-col items-center">
-                <div className="w-16 h-16 rounded-xl bg-surface border border-border flex items-center justify-center text-2xl sm:text-3xl font-display font-bold text-text shadow-inner">
-                  {time.hours}
+            <div className="space-y-3 pt-2">
+              <p className="text-xs font-bold uppercase tracking-widest text-text-muted/80">
+                {isUpcoming ? 'Deal Starts In:' : 'Offer Ends In:'}
+              </p>
+              <div className="flex items-center gap-4">
+                <div className="flex flex-col items-center">
+                  <div className="w-16 h-16 rounded-xl bg-surface border border-border flex items-center justify-center text-2xl sm:text-3xl font-display font-bold text-text shadow-inner">
+                    {time.hours}
+                  </div>
+                  <span className="text-[10px] uppercase font-bold text-text-muted mt-2 tracking-widest">Hrs</span>
                 </div>
-                <span className="text-[10px] uppercase font-bold text-text-muted mt-2 tracking-widest">Hrs</span>
-              </div>
-              <span className="text-2xl font-bold text-text mb-6">:</span>
-              <div className="flex flex-col items-center">
-                <div className="w-16 h-16 rounded-xl bg-surface border border-border flex items-center justify-center text-2xl sm:text-3xl font-display font-bold text-text shadow-inner">
-                  {time.minutes}
+                <span className="text-2xl font-bold text-text mb-6">:</span>
+                <div className="flex flex-col items-center">
+                  <div className="w-16 h-16 rounded-xl bg-surface border border-border flex items-center justify-center text-2xl sm:text-3xl font-display font-bold text-text shadow-inner">
+                    {time.minutes}
+                  </div>
+                  <span className="text-[10px] uppercase font-bold text-text-muted mt-2 tracking-widest">Mins</span>
                 </div>
-                <span className="text-[10px] uppercase font-bold text-text-muted mt-2 tracking-widest">Mins</span>
-              </div>
-              <span className="text-2xl font-bold text-text mb-6">:</span>
-              <div className="flex flex-col items-center">
-                <div className="w-16 h-16 rounded-xl bg-surface border border-border flex items-center justify-center text-2xl sm:text-3xl font-display font-bold text-text shadow-inner">
-                  {time.seconds}
+                <span className="text-2xl font-bold text-text mb-6">:</span>
+                <div className="flex flex-col items-center">
+                  <div className="w-16 h-16 rounded-xl bg-surface border border-border flex items-center justify-center text-2xl sm:text-3xl font-display font-bold text-text shadow-inner">
+                    {time.seconds}
+                  </div>
+                  <span className="text-[10px] uppercase font-bold text-text-muted mt-2 tracking-widest">Secs</span>
                 </div>
-                <span className="text-[10px] uppercase font-bold text-text-muted mt-2 tracking-widest">Secs</span>
               </div>
             </div>
 
             <div className="pt-4">
-              <Link to={deal.buttonLink || '/products'}>
+              <Link to={buttonDestination}>
                 <Button variant="primary" size="lg" className="flex items-center gap-2 group">
-                  {deal.buttonText || 'Unlock Deals'}
+                  {isUpcoming ? 'Unlock Now' : (deal.buttonText || 'Grab Deal Now')}
                   <FiArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                 </Button>
               </Link>
@@ -138,30 +161,32 @@ const DealsSection = () => {
 
           {/* Floating graphic card */}
           <div className="relative z-10 lg:w-96 w-full flex-shrink-0">
-            <motion.div
-              whileHover={{ scale: 1.03 }}
-              transition={{ duration: 0.3 }}
-              className="w-full bg-surface rounded-3xl p-6 border border-border space-y-4"
-            >
-              <div className="aspect-[4/3] rounded-2xl bg-gradient-to-tr from-primary/30 to-accent/30 flex items-center justify-center relative overflow-hidden">
-                {deal.offerText && (
-                  <div className="absolute top-4 right-4 bg-red-500 text-white text-xs font-extrabold px-2.5 py-1 rounded-full">
-                    {deal.offerText}
-                  </div>
-                )}
-                {deal.productImage?.url ? (
-                  <img src={deal.productImage.url} alt={deal.title} className="max-h-full max-w-full object-contain" />
-                ) : (
-                  <span className="text-text font-display font-bold text-2xl opacity-90 uppercase tracking-widest">{deal.subtitle || deal.title}</span>
-                )}
-              </div>
-              <div>
-                <h3 className="font-display font-bold text-text text-xl">{deal.subtitle || deal.title}</h3>
-                {deal.description && (
-                  <p className="text-text-muted text-sm mt-1.5 line-clamp-2">{deal.description}</p>
-                )}
-              </div>
-            </motion.div>
+            <Link to={buttonDestination} className="block">
+              <motion.div
+                whileHover={{ scale: 1.03 }}
+                transition={{ duration: 0.3 }}
+                className="w-full bg-surface rounded-3xl p-6 border border-border space-y-4 cursor-pointer"
+              >
+                <div className="aspect-[4/3] rounded-2xl bg-gradient-to-tr from-primary/30 to-accent/30 flex items-center justify-center relative overflow-hidden">
+                  {deal.offerText && (
+                    <div className="absolute top-4 right-4 bg-red-500 text-white text-xs font-extrabold px-2.5 py-1 rounded-full">
+                      {deal.offerText}
+                    </div>
+                  )}
+                  {deal.productImage?.url ? (
+                    <img src={deal.productImage.url} alt={deal.title} className="max-h-full max-w-full object-contain" />
+                  ) : (
+                    <span className="text-text font-display font-bold text-2xl opacity-90 uppercase tracking-widest">{deal.subtitle || deal.title}</span>
+                  )}
+                </div>
+                <div>
+                  <h3 className="font-display font-bold text-text text-xl">{deal.subtitle || deal.title}</h3>
+                  {deal.description && (
+                    <p className="text-text-muted text-sm mt-1.5 line-clamp-2">{deal.description}</p>
+                  )}
+                </div>
+              </motion.div>
+            </Link>
           </div>
         </div>
       </div>
