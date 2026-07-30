@@ -198,13 +198,23 @@ export const forgotPassword = asyncHandler(async (req, res) => {
 
   const resetUrl = `${process.env.CLIENT_URL}/reset-password/${resetToken}`;
 
+  // Always print reset URL in console for development/debugging purposes
+  console.log('\n🔑 ==========================================');
+  console.log('PASSWORD RESET URL REQUESTED:');
+  console.log(resetUrl);
+  console.log('=============================================\n');
+
   await sendEmail({
     to: user.email,
     subject: 'Mishkwat - Password Reset Request',
     html: passwordResetTemplate(resetUrl),
   });
 
-  res.json({ success: true, message: 'Password reset email sent' });
+  res.json({
+    success: true,
+    message: 'Password reset email sent',
+    resetUrl: process.env.NODE_ENV === 'development' ? resetUrl : undefined
+  });
 });
 
 /** POST /api/v1/auth/reset-password/:token */

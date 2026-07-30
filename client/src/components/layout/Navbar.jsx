@@ -215,10 +215,14 @@ const Navbar = () => {
                 <div className="relative lg:hidden" ref={mobileUserMenuRef}>
                   <button
                     onClick={() => setIsMobileUserMenuOpen(!isMobileUserMenuOpen)}
-                    className="p-1.5 text-text-muted hover:text-text rounded-lg hover:bg-surface transition-colors"
+                    className="p-1.5 text-text-muted hover:text-text rounded-lg hover:bg-surface transition-colors flex items-center justify-center"
                     aria-label="User menu"
                   >
-                    <FiUser size={18} />
+                    {user?.avatar?.url ? (
+                      <img src={user.avatar.url} alt={user.name} className="w-[18px] h-[18px] rounded-full object-cover" />
+                    ) : (
+                      <FiUser size={18} />
+                    )}
                   </button>
                   <AnimatePresence>
                     {isMobileUserMenuOpen && (
@@ -290,8 +294,12 @@ const Navbar = () => {
                     onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
                     className="flex items-center gap-2 p-1.5 text-text-muted hover:text-text rounded-lg hover:bg-surface transition-colors"
                   >
-                    <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white text-sm font-bold">
-                      {user?.name?.charAt(0).toUpperCase() || 'U'}
+                    <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white text-sm font-bold overflow-hidden">
+                      {user?.avatar?.url ? (
+                        <img src={user.avatar.url} alt={user.name} className="w-full h-full object-cover" />
+                      ) : (
+                        user?.name?.charAt(0).toUpperCase() || 'U'
+                      )}
                     </div>
                     <FiChevronDown size={14} className={`transition-transform ${isUserMenuOpen ? 'rotate-180' : ''}`} />
                   </button>

@@ -11,6 +11,7 @@ import Input from '../../components/common/Input';
 const ForgotPasswordPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isSent, setIsSent] = useState(false);
+  const [devResetUrl, setDevResetUrl] = useState('');
   
   const { register, handleSubmit, formState: { errors } } = useForm({
     defaultValues: { email: '' }
@@ -21,6 +22,9 @@ const ForgotPasswordPage = () => {
     try {
       const response = await authApi.forgotPassword(data.email);
       toast.success(response.message || 'Password reset link sent to your email.');
+      if (response.resetUrl) {
+        setDevResetUrl(response.resetUrl);
+      }
       setIsSent(true);
     } catch (error) {
       toast.error(error.response?.data?.message || 'Failed to send reset email. Please try again.');
@@ -87,10 +91,27 @@ const ForgotPasswordPage = () => {
               <p className="text-text-muted text-sm leading-relaxed">
                 We have sent a secure link to reset your password. If you don't receive it in a few minutes, please check your spam folder.
               </p>
+
+              {devResetUrl && (
+                <div className="p-3 bg-primary/10 border border-primary/20 rounded-xl text-left space-y-2">
+                  <p className="text-xs font-bold text-primary-light uppercase tracking-wider">Development Fallback Link:</p>
+                  <p className="text-xs text-text-muted">Since email service is not configured locally, click below to reset your password:</p>
+                  <a
+                    href={devResetUrl}
+                    className="block text-xs font-semibold text-primary hover:underline break-all"
+                  >
+                    {devResetUrl}
+                  </a>
+                </div>
+              )}
+
               <Button
                 variant="outline"
                 fullWidth
-                onClick={() => setIsSent(false)}
+                onClick={() => {
+                  setIsSent(false);
+                  setDevResetUrl('');
+                }}
               >
                 Resend Email
               </Button>

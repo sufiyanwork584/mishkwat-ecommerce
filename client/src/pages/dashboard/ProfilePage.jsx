@@ -9,6 +9,7 @@ import toast from 'react-hot-toast';
 import { FiUser, FiShield, FiMail, FiPhone, FiLock, FiChevronLeft, FiCamera } from 'react-icons/fi';
 import Button from '../../components/common/Button';
 import Input from '../../components/common/Input';
+import Loader from '../../components/common/Loader';
 
 const ProfilePage = () => {
   const user = useSelector(selectUser);
