@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
   FiSearch, FiShoppingCart, FiHeart, FiUser, FiMenu, FiX, FiLogOut,
   FiPackage, FiSettings, FiChevronDown, FiGrid, FiSun, FiMoon, FiHome, FiShoppingBag, FiBookOpen,
+  FiInfo, FiPhone,
 } from 'react-icons/fi';
 import { selectUser, selectIsAuthenticated, selectIsAdmin, logout } from '../../features/authSlice';
 import { selectCartCount } from '../../features/cartSlice';
@@ -109,7 +110,7 @@ const Navbar = () => {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-border shadow-sm transition-colors duration-300 font-sans">
         {/* Top promo bar */}
         <div className="hidden lg:block bg-primary text-white transition-colors duration-300">
-          <div className="container-custom flex items-center justify-between py-1 text-xs font-medium tracking-wide">
+          <div className="px-3 sm:px-5 flex items-center justify-between py-1 text-xs font-medium tracking-wide">
             <span className="flex items-center gap-2">
               <span className="text-primary-light">🕋 {getHijriDate()}</span>
               <span className="opacity-50">|</span>
@@ -125,7 +126,7 @@ const Navbar = () => {
 
         {/* Main navigation header */}
         <div className="container-custom">
-          <div className="flex items-center justify-between h-16 lg:h-[72px] gap-2 md:gap-4">
+          <div className="flex items-center justify-between h-16 lg:h-[72px] gap-1 sm:gap-2 md:gap-4">
             {/* Logo and Menu Trigger */}
             <div className="flex items-center gap-2 md:gap-3 flex-shrink-0">
               <button
@@ -179,17 +180,17 @@ const Navbar = () => {
               </div>
             </form>
 
-            <div className="flex items-center gap-0.5 sm:gap-1.5 flex-shrink-0">
+            <div className="flex items-center gap-1 sm:gap-1.5 flex-shrink-0">
               {/* MOBILE ICONS */}
               {/* Wishlist – mobile header icon */}
               <Link
                 to="/wishlist"
-                className="lg:hidden relative p-2.5 text-text-muted hover:text-text rounded-lg hover:bg-surface transition-colors"
+                className="lg:hidden relative p-1.5 text-text-muted hover:text-text rounded-lg hover:bg-surface transition-colors"
                 aria-label="Wishlist"
               >
-                <FiHeart size={20} />
+                <FiHeart size={18} />
                 {wishlistCount > 0 && (
-                  <span className="absolute -top-0.5 -right-0.5 w-5 h-5 flex items-center justify-center text-[10px] font-bold text-white bg-red-500 rounded-full">
+                  <span className="absolute -top-0.5 -right-0.5 w-4 h-4 flex items-center justify-center text-[9px] font-bold text-white bg-red-500 rounded-full">
                     {wishlistCount}
                   </span>
                 )}
@@ -198,12 +199,12 @@ const Navbar = () => {
               {/* Cart – mobile header icon (beside wishlist) */}
               <Link
                 to="/cart"
-                className="lg:hidden relative p-2.5 text-text-muted hover:text-text rounded-lg hover:bg-surface transition-colors"
+                className="lg:hidden relative p-1.5 text-text-muted hover:text-text rounded-lg hover:bg-surface transition-colors"
                 aria-label="Cart"
               >
-                <FiShoppingCart size={20} />
+                <FiShoppingCart size={18} />
                 {cartCount > 0 && (
-                  <span className="absolute -top-0.5 -right-0.5 w-5 h-5 flex items-center justify-center text-[10px] font-bold text-white bg-primary rounded-full">
+                  <span className="absolute -top-0.5 -right-0.5 w-4 h-4 flex items-center justify-center text-[9px] font-bold text-white bg-primary rounded-full">
                     {cartCount > 9 ? '9+' : cartCount}
                   </span>
                 )}
@@ -214,10 +215,10 @@ const Navbar = () => {
                 <div className="relative lg:hidden" ref={mobileUserMenuRef}>
                   <button
                     onClick={() => setIsMobileUserMenuOpen(!isMobileUserMenuOpen)}
-                    className="p-2.5 text-text-muted hover:text-text rounded-lg hover:bg-surface transition-colors"
+                    className="p-1.5 text-text-muted hover:text-text rounded-lg hover:bg-surface transition-colors"
                     aria-label="User menu"
                   >
-                    <FiUser size={20} />
+                    <FiUser size={18} />
                   </button>
                   <AnimatePresence>
                     {isMobileUserMenuOpen && (
@@ -249,13 +250,13 @@ const Navbar = () => {
                   </AnimatePresence>
                 </div>
               ) : (
-                <button
-                  onClick={() => navigate('/login')}
-                  className="lg:hidden p-2.5 text-text-muted hover:text-text rounded-lg hover:bg-surface transition-colors"
+                <Link
+                  to="/login"
+                  className="lg:hidden p-1.5 text-text-muted hover:text-text rounded-lg hover:bg-surface transition-colors"
                   aria-label="Sign in"
                 >
-                  <FiUser size={20} />
-                </button>
+                  <FiUser size={18} />
+                </Link>
               )}
 
               {/* DESKTOP ICONS */}
@@ -432,6 +433,24 @@ const Navbar = () => {
                       <link.icon size={18} /> {link.label}
                     </Link>
                   ))}
+                  <Link
+                    to="/about"
+                    className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-semibold transition-colors ${location.pathname === '/about'
+                      ? 'text-primary bg-surface'
+                      : 'text-text-muted hover:text-text hover:bg-surface'
+                      }`}
+                  >
+                    <FiInfo size={18} /> About Us
+                  </Link>
+                  <Link
+                    to="/contact"
+                    className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-semibold transition-colors ${location.pathname === '/contact'
+                      ? 'text-primary bg-surface'
+                      : 'text-text-muted hover:text-text hover:bg-surface'
+                      }`}
+                  >
+                    <FiPhone size={18} /> Contact Us
+                  </Link>
                 </div>
 
                 <hr className="border-border my-4" />
