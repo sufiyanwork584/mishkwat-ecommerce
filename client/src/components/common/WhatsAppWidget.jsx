@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const WhatsAppWidget = () => {
-  const phoneNumber = import.meta.env.VITE_ADMIN_PHONE || '919999999999';
+  const phoneNumber = import.meta.env.VITE_ADMIN_PHONE || '917770032919';
   const message = 'Hello Mishkwat! I have a question about your premium products.';
 
   const handleWhatsAppClick = () => {

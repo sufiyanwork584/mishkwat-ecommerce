@@ -62,7 +62,7 @@ const ProductCard = ({ product, index = 0 }) => {
   const handleBulkOrder = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    const whatsappNum = import.meta.env.VITE_ADMIN_PHONE || '919999999999';
+    const whatsappNum = import.meta.env.VITE_ADMIN_PHONE || '917770032919';
     const message = `Hello Mishkwat,
 
 I want to place a bulk order.

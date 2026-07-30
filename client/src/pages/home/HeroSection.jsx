@@ -45,7 +45,7 @@ const HeroSection = () => {
       subtitle: 'Save Big on Bulk Orders',
       description: 'Personalise Hajj & Umrah guides | with your Brand Name. | Get upto 60% Discount on Bulk Orders.',
       cta: 'Bulk Order',
-      link: `https://wa.me/${import.meta.env.VITE_ADMIN_PHONE || '919999999999'}?text=${encodeURIComponent('Hi, I am interested in Branding & Customization.')}`,
+      link: `https://wa.me/${import.meta.env.VITE_ADMIN_PHONE || '917770032919'}?text=${encodeURIComponent('Hi, I am interested in Branding & Customization.')}`,
       bg: 'from-background to-surface',
       accent: 'from-primary to-accent'
     }
