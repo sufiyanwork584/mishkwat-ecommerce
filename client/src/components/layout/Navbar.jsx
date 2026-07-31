@@ -126,7 +126,7 @@ const Navbar = () => {
 
         {/* Main navigation header */}
         <div className="container-custom">
-          <div className="flex items-center justify-between h-16 lg:h-[72px] gap-1 sm:gap-2 md:gap-4">
+          <div className="flex items-center justify-between h-16 lg:h-[72px] gap-1 sm:gap-4 md:gap-4">
             {/* Logo and Menu Trigger */}
             <div className="flex items-center gap-2 md:gap-3 flex-shrink-0">
               <button
