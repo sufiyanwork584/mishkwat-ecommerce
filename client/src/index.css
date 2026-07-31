@@ -164,7 +164,7 @@ body {
 /* Section spacing */
 .section { padding: 80px 0; }
 .section-sm { padding: 40px 0; }
-.container-custom { max-width: 1400px; margin: 0 auto; padding: 0 12px; }
+.container-custom { max-width: 1400px; margin: 0 auto; padding: 0 16px; }
 @media (min-width: 640px) {
   .container-custom { padding: 0 20px; }
 }

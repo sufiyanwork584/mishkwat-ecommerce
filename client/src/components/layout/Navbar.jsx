@@ -180,7 +180,7 @@ const Navbar = () => {
               </div>
             </form>
 
-            <div className="flex items-center gap-1 sm:gap-1.5 flex-shrink-0 pr-2 sm:pr-0" style={{ paddingRight: 'max(0.5rem, env(safe-area-inset-right, 0.5rem))' }}>
+            <div className="flex items-center gap-1 sm:gap-1.5 flex-shrink-0 mr-1 sm:mr-0">
               {/* MOBILE ICONS */}
               {/* Wishlist – mobile header icon */}
               <Link
