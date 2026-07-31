@@ -95,7 +95,7 @@ const HeroSection = () => {
 
       {/* ===== DESKTOP: Original background image (visible md and above) ===== */}
       <div
-        className="hidden md:block absolute inset-y-0 left-0 right-[-15%] lg:right-[-28%] bg-cover bg-right bg-no-repeat pointer-events-none"
+        className="hidden md:block absolute inset-y-0 left-0 right-0 bg-cover bg-right bg-no-repeat pointer-events-none"
         style={{
           backgroundImage: `url('${slides[current].image}')`,
           imageRendering: '-webkit-optimize-contrast'

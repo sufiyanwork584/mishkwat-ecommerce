@@ -47,7 +47,7 @@ const Footer = () => {
       </div>
 
       {/* Main Footer Links */}
-      <div className="pl-8  py-8 md:py-20">
+      <div className="container-custom py-8 md:py-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-16">
           {/* Brand & Description */}
           <div className="space-y-6">

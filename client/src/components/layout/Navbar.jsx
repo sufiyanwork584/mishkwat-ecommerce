@@ -180,7 +180,7 @@ const Navbar = () => {
               </div>
             </form>
 
-            <div className="flex items-center gap-1 sm:gap-1.5 flex-shrink-0 mr-1 sm:mr-0">
+            <div className="flex items-center gap-1 sm:gap-1.5 flex-shrink-0">
               {/* MOBILE ICONS */}
               {/* Wishlist – mobile header icon */}
               <Link
