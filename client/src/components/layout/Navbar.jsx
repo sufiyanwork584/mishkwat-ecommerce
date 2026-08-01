@@ -138,9 +138,10 @@ const Navbar = () => {
               </button>
 
               <Link to="/" className="flex items-center gap-2">
-                <img src="/logo.svg.webp" alt="Mishkwat" className="h-8 md:h-10 w-auto object-contain" />
+                <img src="/logo.svg.webp" alt="Mishkwat" className="navbar-logo" />
               </Link>
             </div>
+
 
             {/* Desktop Navigation Links (lg+) */}
             <div className="hidden lg:flex items-center gap-1 flex-shrink-0">

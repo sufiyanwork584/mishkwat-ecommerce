@@ -219,3 +219,26 @@ input[type="range"] { accent-color: var(--color-primary); }
 .glow-accent { box-shadow: 0 4px 15px rgba(20, 83, 45, 0.2); }
 .dark .glow-accent { box-shadow: 0 4px 15px rgba(20, 83, 45, 0.3); }
 
+/* Responsive navbar logo scaling to prevent horizontal overflow */
+.navbar-logo {
+  height: 28px;
+  width: auto;
+  max-width: 135px;
+  object-fit: contain;
+}
+
+@media (min-width: 400px) {
+  .navbar-logo {
+    height: 32px;
+    max-width: 180px;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar-logo {
+    height: 40px;
+    max-width: none;
+  }
+}
+
+
