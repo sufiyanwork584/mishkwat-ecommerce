@@ -469,9 +469,9 @@ const ProductModal = ({ isOpen, onClose, product, defaultCategory = '', defaultS
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div>
-                <label className="block text-sm font-medium text-gray-300 mb-1.5">Brand</label>
+                <label className="block text-sm font-medium text-gray-300 mb-1.5">Author</label>
                 <input
-                  {...register('brand', { required: 'Brand is required' })}
+                  {...register('brand', { required: 'Author is required' })}
                   className="w-full bg-dark-card border border-dark-border rounded-xl px-4 py-2.5 text-text focus:border-primary focus:outline-none"
                 />
               </div>

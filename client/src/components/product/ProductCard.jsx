@@ -165,12 +165,20 @@ Please share your wholesale pricing.`;
                   )}
                 </div>
               </div>
-              <button
+              <Button
+                                onClick={() => handleAddToCart(true)}
+                                disabled={product.stock <= 0}
+                                variant="secondary"
+                                className="flex-1 py-3.5 flex items-center justify-center gap-2"
+                              >
+                                Buy Now
+                              </Button>
+              {/* <button
                 onClick={handleBulkOrder}
                 className="w-full py-2 px-3 rounded-xl bg-primary/10 border border-primary/20 text-primary hover:bg-primary hover:text-white transition-all text-[11px] font-bold tracking-wider uppercase flex items-center justify-center gap-1.5"
               >
                 <span>Bulk Order</span>
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

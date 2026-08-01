@@ -181,14 +181,14 @@ const ProductsPage = () => {
         </div>
       </div>
 
-      {/* Brand Filter */}
+      {/* Author Filter */}
       <div>
-        <h4 className="text-sm uppercase tracking-wider font-bold text-text mb-4">Brand</h4>
+        <h4 className="text-sm uppercase tracking-wider font-bold text-text mb-4">Author</h4>
         <input
           type="text"
           value={localBrand}
           onChange={(e) => setLocalBrand(e.target.value)}
-          placeholder="Filter by brand..."
+          placeholder="Filter by author..."
           className="w-full bg-surface/50 border border-slate-700 rounded-lg text-text placeholder-slate-500 px-3.5 py-2 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none"
         />
       </div>
