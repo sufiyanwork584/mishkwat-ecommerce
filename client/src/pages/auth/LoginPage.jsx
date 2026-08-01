@@ -24,7 +24,6 @@ const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isGoogleLoading, setIsGoogleLoading] = useState(false);
-  const googleBtnRef = useRef(null);
   
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -58,17 +57,6 @@ const LoginPage = () => {
   const handleGoogleError = () => {
     toast.error('Google login failed. Please try again.');
     setIsGoogleLoading(false);
-  };
-
-  const handleCustomGoogleClick = () => {
-    // Click the hidden Google login button rendered by the library
-    if (googleBtnRef.current) {
-      const iframe = googleBtnRef.current.querySelector('iframe');
-      const btn = googleBtnRef.current.querySelector('[role="button"]') 
-                || googleBtnRef.current.querySelector('div[tabindex]')
-                || googleBtnRef.current.querySelector('div');
-      if (btn) btn.click();
-    }
   };
 
   const onSubmit = async (data) => {
@@ -112,37 +100,17 @@ const LoginPage = () => {
           </div>
 
           {/* Google Sign In Button */}
-          <div className="relative mb-6">
-            <button
-              id="google-login-btn"
-              type="button"
-              onClick={handleCustomGoogleClick}
-              disabled={isGoogleLoading}
-              className="w-full flex items-center justify-center gap-3 px-4 py-3 rounded-xl border border-slate-700 bg-white/5 hover:bg-white/10 text-text font-medium transition-all duration-200 hover:border-slate-500 hover:shadow-lg hover:shadow-primary/5 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {isGoogleLoading ? (
-                <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-              ) : (
-                <GoogleIcon />
-              )}
-              <span>{isGoogleLoading ? 'Signing in...' : 'Continue with Google'}</span>
-            </button>
-            {/* Hidden Google Login rendered by the library — triggers OAuth popup */}
-            <div
-              ref={googleBtnRef}
-              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', opacity: 0, overflow: 'hidden', pointerEvents: 'auto' }}
-              aria-hidden="true"
-            >
-              <GoogleLogin
-                onSuccess={handleGoogleSuccess}
-                onError={handleGoogleError}
-                size="large"
-                width="400"
-                text="continue_with"
-                shape="rectangular"
-                useOneTap={false}
-              />
-            </div>
+          <div className="flex justify-center mb-6 w-full">
+            <GoogleLogin
+              onSuccess={handleGoogleSuccess}
+              onError={handleGoogleError}
+              theme="filled_black"
+              size="large"
+              width="384"
+              text="continue_with"
+              shape="rectangular"
+              useOneTap={false}
+            />
           </div>
 
           {/* OR Divider */}

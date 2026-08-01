@@ -25,7 +25,6 @@ const RegisterPage = () => {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isGoogleLoading, setIsGoogleLoading] = useState(false);
-  const googleBtnRef = useRef(null);
   
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -58,15 +57,6 @@ const RegisterPage = () => {
   const handleGoogleError = () => {
     toast.error('Google sign up failed. Please try again.');
     setIsGoogleLoading(false);
-  };
-
-  const handleCustomGoogleClick = () => {
-    if (googleBtnRef.current) {
-      const btn = googleBtnRef.current.querySelector('[role="button"]')
-                || googleBtnRef.current.querySelector('div[tabindex]')
-                || googleBtnRef.current.querySelector('div');
-      if (btn) btn.click();
-    }
   };
 
   const onSubmit = async (data) => {
@@ -107,37 +97,17 @@ const RegisterPage = () => {
           </div>
 
           {/* Google Sign Up Button */}
-          <div className="relative mb-6">
-            <button
-              id="google-signup-btn"
-              type="button"
-              onClick={handleCustomGoogleClick}
-              disabled={isGoogleLoading}
-              className="w-full flex items-center justify-center gap-3 px-4 py-3 rounded-xl border border-slate-700 bg-white/5 hover:bg-white/10 text-text font-medium transition-all duration-200 hover:border-slate-500 hover:shadow-lg hover:shadow-primary/5 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {isGoogleLoading ? (
-                <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-              ) : (
-                <GoogleIcon />
-              )}
-              <span>{isGoogleLoading ? 'Signing up...' : 'Sign up with Google'}</span>
-            </button>
-            {/* Hidden Google Login rendered by the library */}
-            <div
-              ref={googleBtnRef}
-              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', opacity: 0, overflow: 'hidden', pointerEvents: 'auto' }}
-              aria-hidden="true"
-            >
-              <GoogleLogin
-                onSuccess={handleGoogleSuccess}
-                onError={handleGoogleError}
-                size="large"
-                width="400"
-                text="signup_with"
-                shape="rectangular"
-                useOneTap={false}
-              />
-            </div>
+          <div className="flex justify-center mb-6 w-full">
+            <GoogleLogin
+              onSuccess={handleGoogleSuccess}
+              onError={handleGoogleError}
+              theme="filled_black"
+              size="large"
+              width="384"
+              text="signup_with"
+              shape="rectangular"
+              useOneTap={false}
+            />
           </div>
 
           {/* OR Divider */}
