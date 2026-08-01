@@ -166,17 +166,11 @@ Please share your wholesale pricing.`;
                 </div>
               </div>
               <button
-                onClick={handleAddToCart}
+                onClick={() => navigate(`/product/${product.slug}`)}
                 disabled={product.stock <= 0}
                 className="w-full py-2 px-3 rounded-xl bg-primary text-white hover:bg-primary/90 transition-all text-[11px] font-bold tracking-wider uppercase flex items-center justify-center gap-1.5 disabled:opacity-50"
               >
-                <FiShoppingCart size={13} /> Add to Cart
-              </button>
-              <button
-                onClick={handleBulkOrder}
-                className="w-full py-2 px-3 rounded-xl bg-primary/10 border border-primary/20 text-primary hover:bg-primary hover:text-white transition-all text-[11px] font-bold tracking-wider uppercase flex items-center justify-center gap-1.5"
-              >
-                <span>Bulk Order</span>
+                Buy Now
               </button>
             </div>
           </div>
