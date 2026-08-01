@@ -283,6 +283,7 @@ const ProductDetailPage = () => {
                 )}
               </div>
 
+              {/* Row: Add to Cart | Buy Now | Wishlist */}
               <div className="flex flex-col sm:flex-row gap-4 pt-2">
                 <Button
                   onClick={() => handleAddToCart(false)}
@@ -301,23 +302,25 @@ const ProductDetailPage = () => {
                   Buy Now
                 </Button>
                 <button
-                onClick={handleBulkOrder}
-                className="w-full py-2 px-3 rounded-xl bg-primary/10 border border-primary/20 text-primary hover:bg-primary hover:text-white transition-all text-[11px] font-bold tracking-wider uppercase flex items-center justify-center gap-1.5"
-              >
-                <span>Bulk Order</span>
-              </button>
-                {/* <button
                   onClick={handleWishlistToggle}
-                  className={`px-4.5 rounded-xl border flex items-center justify-center transition-all ${
-                    isInWishlist 
-                      ? 'border-[#FD79A8] bg-[#FD79A8]/10 text-[#FD79A8]' 
+                  className={`px-4 rounded-xl border flex items-center justify-center transition-all ${
+                    isInWishlist
+                      ? 'border-[#FD79A8] bg-[#FD79A8]/10 text-[#FD79A8]'
                       : 'border-slate-700 hover:bg-white/5 text-text-muted'
                   }`}
                   aria-label="Wishlist"
                 >
                   {isInWishlist ? <FaHeart className="w-5 h-5" /> : <FiHeart className="w-5 h-5" />}
-                </button> */}
+                </button>
               </div>
+
+              {/* Bulk Order — full width below */}
+              <button
+                onClick={handleBulkOrder}
+                className="w-full py-2.5 px-3 rounded-xl bg-primary/10 border border-primary/20 text-primary hover:bg-primary hover:text-white transition-all text-[11px] font-bold tracking-wider uppercase flex items-center justify-center gap-1.5"
+              >
+                <span>Bulk Order</span>
+              </button>
             </div>
 
             {/* Free Delivery Info */}
