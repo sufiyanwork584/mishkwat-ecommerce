@@ -55,8 +55,8 @@ const sections = [
     content: `If you have questions, feedback, or complaints regarding this Privacy Policy or how your data is handled, you can reach out directly to our designated Data Protection Officer:
 
 Email: privacy@Mishkwat.com
-Phone: +91 1800-123-4567
-Address: Mishkwat Corp, Sector 62, Noida, UP, India`
+Phone: +91 91528 66032
+Address: D8/43 Opp. Taibah Masjid, MHADA, Malwani Malad West, Mumbai 400095`
   }
 ];
 

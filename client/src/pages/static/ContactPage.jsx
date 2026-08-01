@@ -4,10 +4,10 @@ import { FiMail, FiMapPin, FiPhone, FiSend, FiClock } from 'react-icons/fi';
 import toast from 'react-hot-toast';
 
 const contactInfo = [
-  { icon: FiMail, label: 'Email Us', value: 'support@Mishkwat.com', sub: 'We reply within 24 hours' },
-  { icon: FiPhone, label: 'Call Us', value: '+91 1800-123-4567', sub: 'Mon–Sat, 9AM–8PM IST' },
-  { icon: FiMapPin, label: 'Visit Us', value: 'Bangalore, Karnataka', sub: 'India 560001' },
-  { icon: FiClock, label: 'Business Hours', value: 'Mon–Sat: 9AM–8PM', sub: 'Sunday: Closed' },
+  { icon: FiMail, label: 'Email Us', value: 'salam@mishkwat.com', sub: 'We reply within 24 hours' },
+  { icon: FiPhone, label: 'Call Us', value: '+91 91528 66032', sub: 'Mon–Sat, 11AM–8PM IST' },
+  { icon: FiMapPin, label: 'Visit Us', value: 'Malad West, Mumbai', sub: 'MHADA, Malwani, India 400095' },
+  { icon: FiClock, label: 'Business Hours', value: 'Mon–Sat: 11AM–8PM', sub: 'Sunday: Closed' },
 ];
 
 const ContactPage = () => {
