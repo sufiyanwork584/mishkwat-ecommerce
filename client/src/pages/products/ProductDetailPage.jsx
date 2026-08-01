@@ -154,6 +154,12 @@ const ProductDetailPage = () => {
 
   const effectivePrice = discountPercent > 0 ? product.salePrice : product.price;
 
+  const handleBulkOrder = () => {
+    const whatsappNum = import.meta.env.VITE_ADMIN_PHONE || '917770032919';
+    const message = `Hello Mishkwat,\n\nI want to place a bulk order.\n\nProduct:\n${product.title}\n\nProduct Link:\n${window.location.href}\n\nPlease share your wholesale pricing.`;
+    window.open(`https://wa.me/${whatsappNum}?text=${encodeURIComponent(message)}`, '_blank');
+  };
+
   return (
     <div className="bg-background text-text py-8 min-h-screen">
       <SEO 
